@@ -1,0 +1,1813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fizen Card | This Card is Freedom | Spend USDT Like Cash Globally</title>
+    <meta name="description" content="Fizen Visa Card converts USDT to USD instantly. Spend at 150M+ merchants worldwide with Apple Pay & Google Pay. Backed by Tether. Free card creation. Limited time.">
+    <meta name="keywords" content="USDT Visa card, crypto debit card, spend USDT, Fizen card, virtual Visa card, USDT to USD, stablecoin card, crypto spending card, Tether backed card, best crypto card 2026, USDT payment card, crypto card for freelancers, digital nomad card">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Fizen Card | This Card is Freedom | Spend USDT Like Cash">
+    <meta property="og:description" content="Convert USDT to USD 1:1 and spend with Visa. Backed by Tether. $0 card creation for limited time.">
+    <meta property="og:image" content="https://card.fizen.io/images/og-card.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fizen.io/card">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fizen Card | This Card is Freedom | Spend USDT Like Cash">
+    <meta name="twitter:description" content="USDT to USD Visa card backed by Tether. Apple Pay & Google Pay. 150M+ merchants. $0 creation fee.">
+    <link rel="canonical" href="https://card.fizen.io/">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #09090B;
+            background: #FFFFFF;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ANIMATIONS */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+        }
+
+        @keyframes floatDelayed {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-16px); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* HEADER */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(240, 235, 255, 0.5);
+            padding: 16px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-logo {
+            height: 32px;
+            width: auto;
+        }
+
+        .header-logo img {
+            height: 100%;
+            width: auto;
+        }
+
+        .btn-header {
+            background: #500EC1;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-header:hover {
+            background: #3d0a8f;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(80, 14, 193, 0.25);
+        }
+
+        /* HERO SECTION */
+        .hero-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #f8f6ff;
+        }
+
+        .hero-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80');
+            background-size: cover;
+            background-position: center 40%;
+            filter: blur(2px) saturate(0.8);
+            transform: scale(1.05);
+            z-index: 0;
+        }
+
+        .hero-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, 
+                rgba(255,255,255,0.95) 0%, 
+                rgba(255,255,255,0.88) 35%, 
+                rgba(255,255,255,0.7) 65%,
+                rgba(255,255,255,0.5) 100%);
+            z-index: 1;
+        }
+
+        .hero {
+            padding: 80px 32px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 32px;
+            align-items: center;
+            position: relative;
+            min-height: 550px;
+            z-index: 2;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(80, 14, 193, 0.12) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .hero-content h1 {
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            color: #09090B;
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .hero-content .subtitle {
+            font-size: 18px;
+            color: #52525B;
+            margin-bottom: 32px;
+            line-height: 1.6;
+            animation: slideInLeft 0.8s ease-out 0.1s both;
+        }
+
+        .payment-badges {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 32px;
+            animation: slideInLeft 0.8s ease-out 0.2s both;
+        }
+
+        .apple-icon, .google-icon {
+            width: 16px;
+            height: 16px;
+        }
+
+        .price-display {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 32px;
+            animation: slideInLeft 0.8s ease-out 0.3s both;
+        }
+
+        .price-old {
+            text-decoration: line-through;
+            color: #A1A1A6;
+            font-size: 18px;
+        }
+
+        .price-new {
+            font-size: 36px;
+            font-weight: 700;
+            color: #09090B;
+        }
+
+        .price-currency {
+            font-size: 20px;
+            color: #09090B;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 12px;
+            animation: slideInLeft 0.8s ease-out 0.4s both;
+        }
+
+        .btn-primary {
+            background: #500EC1;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: #3d0a8f;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(80, 14, 193, 0.3);
+        }
+
+        .hero-visual {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: slideInRight 0.8s ease-out 0.2s both;
+        }
+
+        .phone-mockup-container {
+            position: relative;
+            width: 260px;
+            animation: float 3.5s ease-in-out infinite;
+            z-index: 2;
+        }
+        
+        .phone-mockup-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .phone-mockup-container img {
+            width: 100%;
+            height: auto;
+        }
+
+        .card-float-1 {
+            position: absolute;
+            bottom: 15%;
+            left: -60px;
+            width: 180px;
+            animation: floatDelayed 4s ease-in-out infinite;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+            z-index: 3;
+        }
+        
+        .card-float-1 img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .card-float-1 img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* TRUSTED BY SECTION */
+        .trusted-section {
+            padding: 80px 32px;
+            background: #FAFAFA;
+        }
+
+        .trusted-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .trusted-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 48px;
+            color: #09090B;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .marquee-container {
+            position: relative;
+            overflow: hidden;
+            background: white;
+            border-radius: 16px;
+            padding: 32px 0;
+        }
+
+        .marquee {
+            display: flex;
+            gap: 16px;
+            width: max-content;
+            animation: marquee 400s linear infinite;
+        }
+
+        .marquee:hover {
+            animation-play-state: paused;
+        }
+
+        .marquee-item {
+            flex-shrink: 0;
+            margin: 0 8px;
+        }
+
+        .marquee-item img {
+            width: 300px;
+            height: 220px;
+            border-radius: 16px;
+            object-fit: cover;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .marquee-item img:hover {
+            transform: scale(1.05);
+        }
+
+        /* WHY CHOOSE SECTION */
+        .why-choose {
+            padding: 80px 32px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .why-choose h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 60px;
+            color: #09090B;
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+
+        .why-card {
+            background: white;
+            border: 1px solid #E3E1FF;
+            border-radius: 12px;
+            padding: 40px 32px;
+            text-align: center;
+            transition: all 0.4s ease;
+            border-top: 3px solid #500EC1;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .why-card:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .why-card:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .why-card:hover {
+            transform: translateY(-8px);
+            border-color: #500EC1;
+            box-shadow: 0 16px 40px rgba(80, 14, 193, 0.12);
+        }
+
+        .why-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #09090B;
+        }
+
+        .why-card p {
+            font-size: 15px;
+            color: #52525B;
+            line-height: 1.6;
+        }
+
+        /* CARD SHOWCASE */
+        .card-showcase {
+            padding: 100px 32px;
+            background: linear-gradient(180deg, rgba(80, 14, 193, 0.04) 0%, transparent 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-showcase::before {
+            content: '';
+            position: absolute;
+            bottom: -300px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(80, 14, 193, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .showcase-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .showcase-card {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: scaleIn 0.8s ease-out;
+        }
+
+        .showcase-card.front {
+            animation-delay: 0s;
+        }
+
+        .showcase-card.detail {
+            animation-delay: 0.1s;
+        }
+
+        .showcase-card.back {
+            animation-delay: 0.2s;
+        }
+
+        .showcase-card img, .showcase-card svg {
+            max-width: 100%;
+            height: auto;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .showcase-card.detail img {
+            animation-delay: 0.3s;
+        }
+
+        /* HOW IT WORKS */
+        .how-it-works {
+            padding: 80px 32px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .how-it-works h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 60px;
+            color: #09090B;
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            position: relative;
+        }
+
+        .steps-container::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #500EC1 0%, #500EC1 50%, transparent 50%, transparent 100%);
+            z-index: 0;
+        }
+
+        .step {
+            background: white;
+            border: 2px solid #E3E1FF;
+            border-radius: 12px;
+            padding: 32px 24px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+            transition: all 0.3s ease;
+        }
+
+        .step:nth-child(1) { animation-delay: 0s; }
+        .step:nth-child(2) { animation-delay: 0.1s; }
+        .step:nth-child(3) { animation-delay: 0.2s; }
+        .step:nth-child(4) { animation-delay: 0.3s; }
+
+        .step:hover {
+            border-color: #500EC1;
+            box-shadow: 0 8px 24px rgba(80, 14, 193, 0.12);
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: #500EC1;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 auto 16px;
+        }
+
+        .step-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #09090B;
+            margin-bottom: 8px;
+        }
+
+        .step-desc {
+            font-size: 13px;
+            color: #52525B;
+            line-height: 1.5;
+        }
+
+        /* LIMITED TIME OFFER */
+        .limited-offer {
+            padding: 60px 32px;
+            background: linear-gradient(135deg, #500EC1 0%, #3d0a8f 100%);
+            color: white;
+            text-align: center;
+            margin: 80px 32px;
+            border-radius: 16px;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: scaleIn 0.8s ease-out;
+        }
+
+        .limited-offer h3 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .limited-offer .price-old {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 20px;
+            text-decoration: line-through;
+        }
+
+        .limited-offer .price-new {
+            color: #C3FF6B;
+            font-size: 48px;
+            font-weight: 700;
+        }
+
+        .limited-offer p {
+            font-size: 16px;
+            margin-bottom: 32px;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #500EC1;
+            padding: 14px 28px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: #F0EBFF;
+            transform: translateY(-2px);
+        }
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        .fee-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        
+
+        
+
+        /* TETHER SECTION */
+        .tether-section {
+            padding: 80px 32px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .tether-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .tether-image {
+            border-radius: 12px;
+            overflow: hidden;
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .tether-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .tether-text h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: #09090B;
+            animation: slideInRight 0.8s ease-out;
+        }
+
+        .tether-text p {
+            font-size: 16px;
+            color: #52525B;
+            line-height: 1.7;
+            margin-bottom: 24px;
+            animation: slideInRight 0.8s ease-out 0.1s both;
+        }
+
+        .tether-text a {
+            color: #500EC1;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .tether-text a:hover {
+            text-decoration: underline;
+        }
+
+        /* EVENTS SECTION */
+        .events-section {
+            padding: 80px 32px;
+            background: #FAFAFA;
+        }
+
+        .events-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .events-section h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 48px;
+            color: #09090B;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .event-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            border: none;
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+            cursor: pointer;
+        }
+
+        .event-card:nth-child(1) { animation-delay: 0s; }
+        .event-card:nth-child(2) { animation-delay: 0.05s; }
+        .event-card:nth-child(3) { animation-delay: 0.1s; }
+        .event-card:nth-child(4) { animation-delay: 0.15s; }
+        .event-card:nth-child(5) { animation-delay: 0.2s; }
+        .event-card:nth-child(6) { animation-delay: 0.25s; }
+        .event-card:nth-child(7) { animation-delay: 0.3s; }
+        .event-card:nth-child(8) { animation-delay: 0.35s; }
+        .event-card:nth-child(9) { animation-delay: 0.4s; }
+        .event-card:nth-child(10) { animation-delay: 0.45s; }
+        .event-card:nth-child(11) { animation-delay: 0.5s; }
+        .event-card:nth-child(12) { animation-delay: 0.55s; }
+
+        .event-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(80, 14, 193, 0.12);
+        }
+
+        .event-image {
+            width: 100%;
+            aspect-ratio: 426 / 251;
+            overflow: hidden;
+            background: #1a1a2e;
+            border-radius: 8px;
+        }
+
+        .event-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .event-name {
+            padding: 12px 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #09090B;
+            text-align: center;
+        }
+
+        /* FAQ SECTION */
+        .faq-section {
+            padding: 80px 32px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-section h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 48px;
+            text-align: center;
+            color: #09090B;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #E3E1FF;
+            padding: 24px 0;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+            cursor: pointer;
+        }
+
+        .faq-item:nth-child(1) { animation-delay: 0s; }
+        .faq-item:nth-child(2) { animation-delay: 0.1s; }
+        .faq-item:nth-child(3) { animation-delay: 0.2s; }
+        .faq-item:nth-child(4) { animation-delay: 0.3s; }
+        .faq-item:nth-child(5) { animation-delay: 0.4s; }
+
+        .faq-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .faq-header:hover {
+            color: #500EC1;
+        }
+
+        .faq-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #09090B;
+        }
+
+        .faq-toggle {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #500EC1;
+            font-size: 20px;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all 0.3s ease;
+            margin-top: 16px;
+            color: #52525B;
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            opacity: 1;
+        }
+
+        /* FINAL CTA */
+        .final-cta {
+            padding: 80px 32px;
+            background: linear-gradient(135deg, #500EC1 0%, #3d0a8f 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .final-cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .final-cta h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .final-cta p {
+            font-size: 18px;
+            margin-bottom: 32px;
+            opacity: 0.95;
+            animation: fadeInUp 0.8s ease-out 0.1s both;
+        }
+
+        .final-cta .btn-secondary {
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #09090B;
+            color: white;
+            padding: 48px 32px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 64px;
+            align-items: flex-start;
+            margin-bottom: 48px;
+        }
+
+        .footer-logo {
+            height: 32px;
+            width: auto;
+        }
+
+        .footer-logo img {
+            height: 100%;
+            width: auto;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-divider {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 24px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .hero {
+                grid-template-columns: 1fr 1fr;
+                gap: 24px;
+                padding: 60px 24px 60px;
+            }
+            .phone-mockup-container {
+                width: 220px;
+            }
+            .card-float-1 {
+                width: 150px;
+                left: -40px;
+            }
+
+            .hero-content h1 {
+                font-size: 42px;
+            }
+
+            .showcase-container {
+                grid-template-columns: 1fr;
+            }
+
+            .steps-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .steps-container::before {
+                display: none;
+            }
+
+            .tether-content {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .events-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 12px 20px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 40px 20px 40px;
+            }
+            .payment-badges {
+                justify-content: center !important;
+            }
+            .cta-group {
+                justify-content: center;
+            }
+
+            .hero-content h1 {
+                font-size: 32px;
+            }
+
+            .hero-content .subtitle {
+                font-size: 16px;
+            }
+
+            .hero-visual {
+                display: flex;
+                justify-content: center;
+                margin-top: 20px;
+            }
+            .phone-mockup-container {
+                width: 200px;
+            }
+            .card-float-1 {
+                width: 130px;
+                left: -30px;
+                bottom: 10%;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .events-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .how-it-works {
+                padding: 60px 20px;
+            }
+
+            .steps-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .limited-offer {
+                margin: 40px 20px;
+                padding: 40px 20px;
+            }
+
+            .trusted-section {
+                padding: 60px 20px;
+            }
+
+            .marquee-item {
+                width: 60px;
+                height: 60px;
+            }
+
+            .final-cta h2 {
+                font-size: 32px;
+            }
+
+            .faq-section {
+                padding: 60px 20px;
+            }
+
+            .why-choose h2 {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 28px;
+                margin-bottom: 16px;
+            }
+
+            .hero-content .subtitle {
+                font-size: 14px;
+                margin-bottom: 20px;
+            }
+
+            .cta-group {
+                flex-direction: column;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+            }
+
+            .payment-badges {
+                flex-wrap: wrap;
+            }
+
+            .why-choose h2, .how-it-works h2, .faq-section h2 {
+                font-size: 28px;
+            }
+
+            .final-cta h2 {
+                font-size: 28px;
+            }
+
+            .events-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .price-display {
+                flex-direction: column;
+            }
+        }
+
+        .fade-in-view {
+            opacity: 1 !important;
+        }
+    
+        .review-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 28px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .review-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(80,14,193,0.12);
+        }
+        @media (max-width: 1024px) {
+            .reviews-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+        @media (max-width: 768px) {
+            .reviews-grid { grid-template-columns: 1fr !important; }
+        }
+
+    
+    
+        /* Accessibility improvements */
+        .btn-primary:focus, .btn-outline:focus {
+            outline: 3px solid #500EC1;
+            outline-offset: 2px;
+        }
+        a:focus-visible {
+            outline: 2px solid #500EC1;
+            outline-offset: 2px;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .marquee { animation: none !important; }
+            [data-animate] { opacity: 1 !important; transform: none !important; }
+        }
+
+    
+        /* User review avatars */
+        .review-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+            color: #fff;
+            flex-shrink: 0;
+            letter-spacing: 0.5px;
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Product","name":"Fizen Virtual Visa Card","description":"Virtual Visa card that converts USDT to USD for global spending at 150M+ merchants. Backed by Tether.","brand":{"@type":"Brand","name":"Fizen"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD","availability":"https://schema.org/InStock"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"500000"}}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Fizen Card?","acceptedAnswer":{"@type":"Answer","text":"Fizen Card is a virtual Visa card that converts USDT to USD for spending at 150M+ merchants worldwide. Works with Apple Pay and Google Pay."}},{"@type":"Question","name":"How does the free card offer work?","acceptedAnswer":{"@type":"Answer","text":"For a limited time, Fizen offers free card creation. Sign up, complete KYC, and your virtual card is ready in minutes."}},{"@type":"Question","name":"What are the fees?","acceptedAnswer":{"@type":"Answer","text":"USDT to USD at 1:1 rate, no hidden fees. Transparent pricing based on your card tier."}},{"@type":"Question","name":"Where can I use Fizen Card?","acceptedAnswer":{"@type":"Answer","text":"Accepted at 150M+ merchants worldwide wherever Visa is accepted, including online and physical stores via Apple Pay and Google Pay."}},{"@type":"Question","name":"Is Fizen Card safe?","acceptedAnswer":{"@type":"Answer","text":"Backed by Tether. All transactions secured with Visa fraud protection and 3D Secure authentication."}}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Organization","name":"Fizen","url":"https://fizen.io","description":"Crypto payments and virtual Visa card platform backed by Tether.","foundingDate":"2022","sameAs":["https://twitter.com/fizenio","https://t.me/fizen_io"]}
+    </script>
+
+    <link rel="canonical" href="https://fizen.io/card/" />
+    <link rel="alternate" hreflang="en" href="https://fizen.io/card/" />
+    <link rel="alternate" hreflang="ko" href="https://fizen.io/card/kr/" />
+    <link rel="alternate" hreflang="ru" href="https://fizen.io/card/ru/" />
+    <link rel="alternate" hreflang="id" href="https://fizen.io/card/id/" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://fizen.io/card/cn/" />
+    <link rel="alternate" hreflang="x-default" href="https://fizen.io/card/" />
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA4FIZEN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA4FIZEN', {
+            page_location: window.location.href,
+            page_title: document.title
+        });
+        
+        // Track CTA clicks
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('a[href*="app.fizen.io"]').forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    gtag('event', 'cta_click', {
+                        event_category: 'conversion',
+                        event_label: this.textContent.trim(),
+                        link_url: this.href
+                    });
+                });
+            });
+        });
+    </script>
+
+    <!-- AppsFlyer Smart Banner -->
+    <script>
+        // AppsFlyer OneLink Smart Script
+        // Replace APPFLYERSFIZEN with your actual OneLink subdomain
+        !function(t,e,n,s,a,c,i,o,p){t.AppsFlyerSdkObject=a,t.AF=t.AF||function(){
+        (t.AF.q=t.AF.q||[]).push([Date.now()].concat(Array.prototype.slice.call(arguments)))
+        },t.AF.id=t.AF.id||i,t.AF.plugins={},o=e.createElement(n),
+        p=e.getElementsByTagName(n)[0],o.async=1,o.src="https://websdk.appsflyer.com?"+(c.length>0?"st="+c.split(",").sort().join(",")+"&":"")+(i.length>0?"af_id="+i:""),
+        p.parentNode.insertBefore(o,p)}(window,document,"script",0,"AF","banners",
+        "{your-af-web-key}");
+        
+        // AF Smart Banner config
+        AF('banners', 'showBanner', {
+            bannerContainerQuery: "#af-banner-container",
+            additionalParams: {
+                af_siteid: document.querySelector('meta[name="af-siteid"]')?.content || "web_landing",
+                af_channel: "web",
+                af_adset: document.querySelector('html').lang || "en",
+                af_ad: window.location.pathname
+            }
+        });
+    </script>
+    <div id="af-banner-container"></div>
+
+    <!-- UTM Parameter Forwarding -->
+    <script>
+        // Capture UTM params from URL and append to all CTA links
+        document.addEventListener('DOMContentLoaded', function() {
+            var params = new URLSearchParams(window.location.search);
+            var utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term',
+                           'af_siteid', 'af_channel', 'af_sub1', 'af_sub2', 'pid', 'shortlink', 'referral-code'];
+            
+            var utmParams = {};
+            utmKeys.forEach(function(key) {
+                if (params.get(key)) utmParams[key] = params.get(key);
+            });
+            
+            // If UTM params exist in URL, append them to all CTA links
+            if (Object.keys(utmParams).length > 0) {
+                document.querySelectorAll('a[href*="app.fizen.io"]').forEach(function(link) {
+                    var url = new URL(link.href);
+                    Object.keys(utmParams).forEach(function(key) {
+                        url.searchParams.set(key, utmParams[key]);
+                    });
+                    link.href = url.toString();
+                });
+            }
+        });
+    </script>
+
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="header-logo">
+        <img src="images/img-3289d1c65142.png" alt="Fizen">
+    </div>
+    <a href="https://app.fizen.io?utm_source=landing&utm_medium=web&utm_campaign=apr-free-card-camp&utm_content=en" class="btn-header">Get Your Card</a>
+</header>
+
+<main>
+<!-- HERO SECTION -->
+<div class="hero-wrapper">
+    <section class="hero">
+    <div class="hero-content">
+        <p class="hero-eyebrow" style="font-size:13px;text-transform:uppercase;letter-spacing:4px;color:#500EC1;font-weight:600;margin-bottom:12px;"><span style="font-size:18px;font-weight:800;letter-spacing:1px;">Fizen Card</span> <span style="font-size:12px;font-weight:500;letter-spacing:3px;opacity:0.7;">· Backed by Tether</span></p>
+            <h1 style="font-size:clamp(44px,6vw,72px);line-height:1.05;font-weight:800;letter-spacing:-1.5px;">This Card is<br><span style="background:linear-gradient(135deg,#500EC1,#7C3AED);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Freedom</span></h1>
+        <p class="subtitle" style="font-size:clamp(17px,2vw,20px);color:#555;margin-top:16px;">Spend USDT like cash</p>
+
+        <div class="payment-badges" style="display:flex;gap:3px;align-items:center;margin-bottom:24px;">
+<svg width="105" height="72" viewBox="0 -11 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="0.5" width="69" height="47" rx="5.5" fill="white" stroke="#D9D9D9"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M19.1601 16.6863C18.5726 17.3901 17.6325 17.9452 16.6924 17.8659C16.5749 16.9143 17.0352 15.9032 17.5737 15.2787C18.1613 14.5551 19.1895 14.0397 20.0219 14C20.1198 14.9913 19.7379 15.9627 19.1601 16.6863ZM20.012 18.0542C19.1838 18.006 18.4281 18.3064 17.8177 18.549C17.4249 18.7051 17.0923 18.8373 16.8392 18.8373C16.5552 18.8373 16.2089 18.6981 15.82 18.5417L15.82 18.5417L15.82 18.5417L15.82 18.5417C15.3104 18.3368 14.7278 18.1025 14.1169 18.1137C12.7166 18.1335 11.4142 18.9365 10.6993 20.2152C9.23044 22.7726 10.3174 26.5593 11.7373 28.6409C12.4326 29.6718 13.265 30.8018 14.3617 30.7622C14.8442 30.7438 15.1913 30.5947 15.5505 30.4404C15.9641 30.2628 16.3937 30.0782 17.0645 30.0782C17.712 30.0782 18.1228 30.2579 18.5172 30.4305C18.8921 30.5945 19.2522 30.752 19.7868 30.7424C20.9227 30.7225 21.6376 29.7115 22.3328 28.6806C23.0831 27.5741 23.4129 26.4943 23.4629 26.3304L23.4688 26.3114C23.4676 26.3102 23.4583 26.3059 23.4419 26.2984C23.1911 26.1821 21.274 25.2937 21.2557 22.9114C21.2372 20.9118 22.7762 19.8987 23.0185 19.7392C23.0332 19.7295 23.0432 19.723 23.0477 19.7196C22.0684 18.2525 20.5408 18.0939 20.012 18.0542ZM27.8755 30.6333V15.1796H33.6041C36.5615 15.1796 38.6277 17.2414 38.6277 20.2548C38.6277 23.2683 36.5223 25.3499 33.5258 25.3499H30.2453V30.6333H27.8755ZM30.2451 17.2018H32.9772C35.0336 17.2018 36.2087 18.312 36.2087 20.2648C36.2087 22.2175 35.0336 23.3377 32.9674 23.3377H30.2451V17.2018ZM46.452 28.7797C45.8253 29.989 44.4445 30.7523 42.9561 30.7523C40.7527 30.7523 39.2153 29.424 39.2153 27.4217C39.2153 25.4391 40.7038 24.2992 43.4555 24.1307L46.4128 23.9522V23.0998C46.4128 21.8409 45.6 21.1569 44.1508 21.1569C42.9561 21.1569 42.0845 21.7814 41.9083 22.733H39.7735C39.842 20.7307 41.7026 19.2735 44.2193 19.2735C46.9318 19.2735 48.6945 20.7108 48.6945 22.9412V30.6333H46.501V28.7797H46.452ZM43.5924 28.9185C42.3292 28.9185 41.5262 28.3039 41.5262 27.3622C41.5262 26.3908 42.2998 25.8257 43.7785 25.7365L46.4127 25.568V26.4403C46.4127 27.8876 45.1984 28.9185 43.5924 28.9185ZM55.9702 31.238C55.0204 33.9442 53.9334 34.8363 51.6224 34.8363C51.4461 34.8363 50.8585 34.8165 50.7214 34.7768V32.9232C50.8683 32.943 51.2307 32.9628 51.4167 32.9628C52.4645 32.9628 53.0521 32.5167 53.4144 31.357L53.6298 30.673L49.6149 19.4222H52.0924L54.8833 28.5517H54.9322L57.7231 19.4222H60.1321L55.9702 31.238Z" fill="#000000"/>
+</svg>
+<svg width="105" height="72" viewBox="0 -11 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="0.5" width="69" height="47" rx="5.5" fill="white" stroke="#D9D9D9"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M33.0603 31.5161V25.4741H36.1786C37.4564 25.4741 38.535 25.046 39.4142 24.2015L39.6252 23.9875C41.2313 22.2391 41.1258 19.5155 39.4142 17.898C38.5584 17.0416 37.3861 16.5778 36.1786 16.6016H31.1729V31.5161H33.0603ZM33.0605 23.6425V18.4332H36.2262C36.9063 18.4332 37.5512 18.6948 38.0319 19.1706C39.052 20.1696 39.0754 21.8347 38.0905 22.8694C37.6098 23.3809 36.9297 23.6663 36.2262 23.6425H33.0605ZM48.4293 22.1083C47.6204 21.359 46.5185 20.9784 45.1234 20.9784C43.3298 20.9784 41.9816 21.6444 41.0906 22.9646L42.7553 24.0231C43.3649 23.1192 44.1973 22.6673 45.2524 22.6673C45.9206 22.6673 46.5653 22.9171 47.0694 23.369C47.5618 23.7972 47.8432 24.4156 47.8432 25.0698V25.5098C47.1163 25.1055 46.2019 24.8914 45.0765 24.8914C43.7635 24.8914 42.7084 25.2006 41.923 25.831C41.1375 26.4613 40.739 27.2939 40.739 28.3524C40.7155 29.3158 41.1258 30.2316 41.8527 30.85C42.5912 31.5161 43.5291 31.8491 44.631 31.8491C45.9323 31.8491 46.9639 31.2663 47.7494 30.1007H47.8314V31.5161H49.6368V25.2244C49.6368 23.9042 49.2382 22.8576 48.4293 22.1083ZM43.3066 29.6369C42.9197 29.3514 42.6852 28.8876 42.6852 28.3881C42.6852 27.8291 42.9432 27.3652 43.4473 26.9965C43.9632 26.6278 44.6081 26.4375 45.3702 26.4375C46.4255 26.4256 47.2462 26.6635 47.8325 27.1392C47.8325 27.948 47.5159 28.6497 46.8945 29.2444C46.3317 29.8153 45.5696 30.1364 44.7723 30.1364C44.2446 30.1483 43.7287 29.9699 43.3066 29.6369ZM53.693 35.9999L60.0001 21.3114H57.9485L55.0295 28.6378H54.9943L52.0049 21.3114H49.9534L54.0916 30.8619L51.747 35.9999H53.693Z" fill="#3C4043"/>
+<path d="M26.544 24.1659C26.544 23.5831 26.4971 23.0003 26.4034 22.4294H18.4434V25.7239H23.0037C22.8161 26.7825 22.2065 27.734 21.3155 28.3286V30.4695H24.0353C25.6296 28.9828 26.544 26.7825 26.544 24.1659Z" fill="#4285F4"/>
+<path d="M18.4442 32.539C20.7185 32.539 22.6411 31.7778 24.0361 30.4695L21.3164 28.3287C20.5544 28.852 19.5814 29.1493 18.4442 29.1493C16.2403 29.1493 14.3763 27.6388 13.7081 25.6169H10.9062V27.8291C12.3365 30.7193 15.2555 32.539 18.4442 32.539Z" fill="#34A853"/>
+<path d="M13.708 25.6169C13.3563 24.5584 13.3563 23.4048 13.708 22.3343V20.134H10.9058C9.69808 22.5484 9.69808 25.4029 10.9058 27.8172L13.708 25.6169Z" fill="#FBBC04"/>
+<path d="M18.4442 18.8019C19.6517 18.7781 20.8123 19.242 21.6798 20.0864L24.0948 17.6363C22.559 16.1853 20.5427 15.3885 18.4442 15.4123C15.2555 15.4123 12.3365 17.2439 10.9062 20.134L13.7081 22.3462C14.3763 20.3124 16.2403 18.8019 18.4442 18.8019Z" fill="#EA4335"/>
+</svg>
+</div>
+<div class="cta-group">
+            <a href="https://app.fizen.io?utm_source=landing&utm_medium=web&utm_campaign=apr-free-card-camp&utm_content=en" class="btn-primary">Get Your Card</a>
+        </div>
+
+        </div>
+
+        
+
+        
+    
+
+    <div class="hero-visual">
+        <div class="phone-mockup-container">
+            <img src="images/img-9c496f188217.png" alt="Fizen Card on phone">
+        </div>
+        <div class="card-float-1">
+            <img src="images/img-d53ea1a4254f.png" alt="Fizen Card isometric view">
+        </div>
+    </div>
+</section>
+</div>
+
+<!-- TRUSTED BY SECTION -->
+<section class="trusted-section">
+    <div class="trusted-content">
+        <h2 class="trusted-title" style="font-size:clamp(36px,4vw,52px);font-weight:800;margin-bottom:56px;">Our Global Community</h2>
+        <div class="marquee-container">
+            <div class="marquee">
+<div class="marquee-item"><img src="images/img-217f170325ae.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-1928ba08c119.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-5058c66c53bf.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-3477a4379720.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-21b872706df0.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-959c18af8068.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-1adaa470fb9f.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-2be602ef966f.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-ddcef4af32a4.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-d60ab72cc8bf.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-9a8465dca0ca.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-efe3cf93adfd.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-b02ab32f94ae.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-b9eacf64bb13.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-525e342a9780.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-aea0d540ad29.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-58cc21b30d2a.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-e4f13ed2f4be.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-644f1bcf0672.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-657e25b546f8.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-f82a279e502f.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-64a016242de1.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-2dc187637ad6.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-8b8ed50acb6b.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-6f2e58944ed9.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-16b649f3e1d5.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-1f0deb726028.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-217f170325ae.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-1928ba08c119.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-5058c66c53bf.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-3477a4379720.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-21b872706df0.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-959c18af8068.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-1adaa470fb9f.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-2be602ef966f.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-ddcef4af32a4.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-d60ab72cc8bf.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-9a8465dca0ca.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-efe3cf93adfd.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-b02ab32f94ae.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-b9eacf64bb13.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-525e342a9780.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-aea0d540ad29.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-58cc21b30d2a.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-e4f13ed2f4be.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-644f1bcf0672.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-657e25b546f8.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-f82a279e502f.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-64a016242de1.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-2dc187637ad6.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-8b8ed50acb6b.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-6f2e58944ed9.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-16b649f3e1d5.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+<div class="marquee-item"><img src="images/img-1f0deb726028.jpg" alt="Fizen community" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WHY CHOOSE SECTION -->
+<section class="why-choose">
+    <h2>Why Fizen Card</h2>
+    <div class="why-grid">
+        <div class="why-card">
+            <div style="font-size:36px;margin-bottom:16px;">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#500EC1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <h3>Trust</h3>
+            <p>Backed by Tether, the largest stablecoin issuer with $100B+ in circulation.</p>
+        </div>
+        
+        <div class="why-card">
+            <div style="font-size:36px;margin-bottom:16px;">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#500EC1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <h3>Accessibility</h3>
+            <p>150M+ merchants across 200+ countries. Apple Pay & Google Pay ready. True global spending power.</p>
+        </div>
+        <div class="why-card">
+            <div style="font-size:36px;margin-bottom:16px;">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#500EC1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="m12 8 4 4-4 4"/></svg>
+            </div>
+            <h3>Simplicity</h3>
+            <p>Convert 1:1 USDT to USD. No hidden fees, no complexity. Spend like cash. Online, in-store, anywhere.</p>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="card-showcase">
+    <div class="showcase-container">
+        <div class="showcase-card front">
+            <svg viewBox="0 0 360 214" width="240" height="142" xmlns="http://www.w3.org/2000/svg">
+                <image href="images/img-51f3c4b5c52e.svg" width="360" height="214"/>
+            </svg>
+        </div>
+        <div class="showcase-card detail">
+            <img src="images/img-6d5a60b706df.png" alt="Card details screen" style="width: 200px;">
+        </div>
+        <div class="showcase-card back">
+            <svg viewBox="0 0 360 214" width="240" height="142" xmlns="http://www.w3.org/2000/svg">
+                <image href="images/img-bca817fd202a.svg" width="360" height="214"/>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<section class="limited-offer" style="background:linear-gradient(135deg,#500EC1 0%,#6D28D9 100%);padding:80px 24px;color:#fff;">
+    <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:60px;flex-wrap:wrap;">
+        
+        <div style="flex:1;min-width:320px;text-align:center;">
+            <div style="display:inline-block;background:rgba(255,255,255,0.15);color:#fff;padding:8px 24px;border-radius:12px;font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:28px;">April Offer</div>
+            <h3 style="font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:12px;color:#fff;">Fizen Card - Free</h3>
+            <p style="font-size:16px;color:rgba(255,255,255,0.7);margin-bottom:32px;">Usually $9.99 to issue. Right now - $0.</p>
+            
+            <div style="margin-bottom:32px;display:flex;align-items:baseline;gap:16px;justify-content:center;">
+                <span style="font-size:32px;color:rgba(255,255,255,0.4);text-decoration:line-through;">$9.99</span>
+                <span style="font-size:64px;font-weight:800;color:#C3FF6B;">$0</span>
+            </div>
+            
+            <div style="max-width:400px;margin:0 auto 12px;display:flex;align-items:center;gap:12px;">
+                <div style="flex:1;height:8px;background:rgba(255,255,255,0.15);border-radius:4px;overflow:hidden;">
+                    <div style="width:80%;height:100%;background:#C3FF6B;border-radius:4px;"></div>
+                </div>
+                <span style="font-size:14px;color:#fff;white-space:nowrap;"><strong>50 spots left</strong> out of 250</span>
+            </div>
+            
+            <div style="display:flex;gap:16px;margin:32px 0;justify-content:center;" id="countdown-timer">
+                <div style="text-align:center;">
+                    <div style="font-size:42px;font-weight:700;color:#fff;line-height:1;" id="countdown-days">21</div>
+                    <div style="font-size:11px;color:rgba(255,255,255,0.6);margin-top:4px;">days</div>
+                </div>
+                <div style="font-size:42px;color:rgba(255,255,255,0.3);line-height:1;">:</div>
+                <div style="text-align:center;">
+                    <div style="font-size:42px;font-weight:700;color:#fff;line-height:1;" id="countdown-hours">05</div>
+                    <div style="font-size:11px;color:rgba(255,255,255,0.6);margin-top:4px;">hours</div>
+                </div>
+                <div style="font-size:42px;color:rgba(255,255,255,0.3);line-height:1;">:</div>
+                <div style="text-align:center;">
+                    <div style="font-size:42px;font-weight:700;color:#fff;line-height:1;" id="countdown-minutes">01</div>
+                    <div style="font-size:11px;color:rgba(255,255,255,0.6);margin-top:4px;">minutes</div>
+                </div>
+                <div style="font-size:42px;color:rgba(255,255,255,0.3);line-height:1;">:</div>
+                <div style="text-align:center;">
+                    <div style="font-size:42px;font-weight:700;color:#fff;line-height:1;" id="countdown-seconds">43</div>
+                    <div style="font-size:11px;color:rgba(255,255,255,0.6);margin-top:4px;">seconds</div>
+                </div>
+            </div>
+            
+            <a href="https://app.fizen.io?utm_source=landing&utm_medium=web&utm_campaign=apr-free-card-camp&utm_content=en" class="btn-cta" style="display:inline-block;padding:16px 48px;font-size:17px;font-weight:700;background:#fff;color:#500EC1;border:none;border-radius:12px;text-decoration:none;margin-top:8px;transition:all 0.3s;box-shadow:0 4px 20px rgba(0,0,0,0.15);">Get Your Free Card</a>
+            <p style="font-size:13px;color:rgba(255,255,255,0.4);margin-top:16px;">No hidden fees &middot; Cancel anytime</p>
+        </div>
+        
+        <div style="flex:0 0 400px;max-width:400px;margin:0 auto;display:flex;align-items:center;justify-content:center;">
+            <img src="images/img-db895827998d.png" alt="Fizen Visa Card" style="width:100%;height:auto;border-radius:24px;filter:drop-shadow(0 16px 40px rgba(0,0,0,0.25));">
+        </div>
+        
+    </div>
+</section>
+
+<!-- USER REVIEWS -->
+    <section style="padding:80px 24px;background:#FAFAFA;">
+        <div style="max-width:1200px;margin:0 auto;text-align:center;">
+            <p style="font-size:14px;text-transform:uppercase;letter-spacing:3px;color:#500EC1;font-weight:600;margin-bottom:8px;">Real Stories</p>
+            <h2 style="font-size:clamp(28px,4vw,40px);font-weight:700;margin-bottom:12px;">What Our Users Say</h2>
+            <p style="font-size:16px;color:#52525B;margin-bottom:48px;max-width:600px;margin-left:auto;margin-right:auto;">From Bali to Bangkok to Belgium. Freelancers, travelers, and expats who chose Fizen.</p>
+            <div class="reviews-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:left;">
+
+                <div class="review-card" data-animate>
+                    <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+                        <div>
+                            <div style="display:flex;align-items:center;gap:12px;"><div class="review-avatar" style="background:#500EC1;">CS</div><div style="font-weight:600;font-size:15px;">Christopher Silva 🇧🇪</div></div>
+                            <div style="font-size:13px;color:#52525B;">Meta Ads Expert in Belgium</div>
+                        </div>
+                    </div>
+                    <div style="margin-bottom:8px;"><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span></div>
+                    <p style="font-size:14px;line-height:1.7;color:#374151;">"Card authorization rate is 100% on Meta. Fees are stable and predictable. What really sold me is the team. Whenever I had an issue, support replied fast and actually fixed things. You can tell they care about the product. Very trustworthy."</p>
+                </div>
+                <div class="review-card" data-animate>
+                    <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+                        <div>
+                            <div style="display:flex;align-items:center;gap:12px;"><div class="review-avatar" style="background:#500EC1;">AP</div><div style="font-weight:600;font-size:15px;">Alexey Petrash 🇷🇺</div></div>
+                            <div style="font-size:13px;color:#52525B;">Traveler in Bali, Indonesia</div>
+                        </div>
+                    </div>
+                    <div style="margin-bottom:8px;"><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span></div>
+                    <p style="font-size:14px;line-height:1.7;color:#374151;">"The app works great while traveling. Smooth transactions, stable fees, no surprises. Yes, there is a $10 creation fee but it pays for itself quickly since there are no hidden charges. Compared to Bybit card, I save a lot more on high spending. If you have a driving license or PR from Indonesia, Vietnam, or Thailand, you are good to go."</p>
+                </div>
+                <div class="review-card" data-animate>
+                    <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+                        <div>
+                            <div style="display:flex;align-items:center;gap:12px;"><div class="review-avatar" style="background:#500EC1;">NC</div><div style="font-weight:600;font-size:15px;">Netanel Cohen 🇮🇱</div></div>
+                            <div style="font-size:13px;color:#52525B;">Expat in Da Nang, Vietnam</div>
+                        </div>
+                    </div>
+                    <div style="margin-bottom:8px;"><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span></div>
+                    <p style="font-size:14px;line-height:1.7;color:#374151;">"Incredible solution for using USDT in daily life. I shared it with my whole family. I use Fizen for everything from eSIM to VietQR Pay. Sometimes there are maintenance updates, but I trust the people behind this project completely. They refunded gas fees when I sent on the wrong network, handled online purchase refunds. Special thanks to Ben from Fizen who is always there when I need help."</p>
+                </div>
+                <div class="review-card" data-animate>
+                    <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+                        <div>
+                            <div style="display:flex;align-items:center;gap:12px;"><div class="review-avatar" style="background:#500EC1;">HS</div><div style="font-weight:600;font-size:15px;">Hasani Sahlehe 🇹🇿</div></div>
+                            <div style="font-size:13px;color:#52525B;">Google & TikTok Ads Expert in Tanzania</div>
+                        </div>
+                    </div>
+                    <div style="margin-bottom:8px;"><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span></div>
+                    <p style="font-size:14px;line-height:1.7;color:#374151;">"Smooth authorization, no fee on card binding, stable and works well. They allow creating multiple cards, freeze or close anytime. The dashboard could use some improvement, but overall the experience has been amazing with frank and instant communication from the team."</p>
+                </div>
+                <div class="review-card" data-animate>
+                    <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+                        <div>
+                            <div style="display:flex;align-items:center;gap:12px;"><div class="review-avatar" style="background:#500EC1;">PM</div><div style="font-weight:600;font-size:15px;">Park Minho 🇰🇷</div></div>
+                            <div style="font-size:13px;color:#52525B;">Expat in Bangkok, Thailand</div>
+                        </div>
+                    </div>
+                    <div style="margin-bottom:8px;"><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span></div>
+                    <p style="font-size:14px;line-height:1.7;color:#374151;">"Got introduced at an event in Singapore. Most underrated team in crypto. Super lowkey but grounded work. Been using their card since launch, my greatest $10 investment ever. They sent me a gift after I gave feedback. Feels like VIP treatment. Whenever I have USDT, Fizen is always the first thing I think of. You feel safe here."</p>
+                </div>
+                <div class="review-card" data-animate>
+                    <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+                        <div>
+                            <div style="display:flex;align-items:center;gap:12px;"><div class="review-avatar" style="background:#500EC1;">LT</div><div style="font-weight:600;font-size:15px;">Li Tian Yuan 🇨🇳</div></div>
+                            <div style="font-size:13px;color:#52525B;">Traveler in Southeast Asia</div>
+                        </div>
+                    </div>
+                    <div style="margin-bottom:8px;"><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span></div>
+                    <p style="font-size:14px;line-height:1.7;color:#374151;">"Fizen is the Alipay of Southeast Asia. I found them through ChatGPT and everything is 100%. They saved me more than twice with their QR Pay. I got the card as a gift for being a loyal user. The support team is not just a project team. They are your friends."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section class="tether-section">
+    <div class="tether-content">
+        <div class="tether-image">
+            <img src="images/img-4ae428bf2dfa.jpg" alt="Tether and Fizen partnership">
+        </div>
+        <div class="tether-text">
+            <h2>Backed by Tether</h2>
+            <p>Fizen Card is backed by Tether, the company behind USDT the most trusted stablecoin globally with over $100 billion in circulation.</p>
+            <p>This strategic partnership ensures security, stability, and global reach for all Fizen users.</p>
+            <a href="https://tether.io/news/tether-announces-strategic-investment-in-fizen-to-strengthen-global-stablecoin-utilization-and-self-custody-solutions/" target="_blank">Read the announcement</a>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- EVENTS SECTION -->
+<section class="events-section">
+    <div class="events-content">
+        <h2>Building Since 2022</h2>
+        <div class="events-grid">
+        <a href="https://www.youtube.com/watch?v=64vLhcqBFnA" target="_blank" class="event-card">
+                <div class="event-image"><img src="images/img-ed77cb8afc31.jpg" alt="ETH HCMC 2022" style="width:100%;height:100%;object-fit:contain;border-radius:8px;"></div>
+                <div class="event-name">ETH HCMC 2022</div>
+            </a>
+        <a href="https://www.youtube.com/watch?v=6qU0sQaQNcY" target="_blank" class="event-card">
+                <div class="event-image"><img src="images/img-94d581c0a520.jpg" alt="Blockchain Summit 2022" style="width:100%;height:100%;object-fit:contain;border-radius:8px;"></div>
+                <div class="event-name">Blockchain Summit 2022</div>
+            </a>
+        <a href="https://www.youtube.com/watch?v=P7Du3TC4cTU" target="_blank" class="event-card">
+                <div class="event-image"><img src="images/img-7d5e7ac0d901.jpg" alt="Paris Blockchain Summit 2022" style="width:100%;height:100%;object-fit:contain;border-radius:8px;"></div>
+                <div class="event-name">Paris Blockchain Summit 2022</div>
+            </a>
+        <a href="https://x.com/fizenapp/status/1504062446885302273" target="_blank" class="event-card">
+                <div class="event-image"><img src="images/img-eaaf29d82c2a.jpg" alt="Crypto Expo 2022" style="width:100%;height:100%;object-fit:contain;border-radius:8px;"></div>
+                <div class="event-name">Crypto Expo 2022</div>
+            </a>
+        <a href="https://www.youtube.com/watch?v=mqT619xzHaY" target="_blank" class="event-card">
+                <div class="event-image"><img src="images/img-5b56a965e257.jpg" alt="WBS Marvels HCMC 2022" style="width:100%;height:100%;object-fit:contain;border-radius:8px;"></div>
+                <div class="event-name">WBS Marvels HCMC 2022</div>
+            </a>
+        <a href="https://www.youtube.com/watch?v=FN3p3hpljGg" target="_blank" class="event-card">
+                <div class="event-image"><img src="images/img-7f0e4cfd74e2.jpg" alt="Miss Charm 2023 (Official Sponsor)" style="width:100%;height:100%;object-fit:contain;border-radius:8px;"></div>
+                <div class="event-name">Miss Charm 2023 (Official Sponsor)</div>
+            </a>
+        <a href="https://www.youtube.com/watch?v=MIykPA2JZhQ" target="_blank" class="event-card">
+                <div class="event-image"><img src="images/img-c3349d96832d.jpg" alt="Miss Universe 2023 (Voting System)" style="width:100%;height:100%;object-fit:contain;border-radius:8px;"></div>
+                <div class="event-name">Miss Universe 2023 (Voting System)</div>
+            </a>
+        <a href="https://www.youtube.com/watch?v=QPvhAJ0AczI" target="_blank" class="event-card">
+                <div class="event-image"><img src="images/img-f4aa8bb85fd9.jpg" alt="NEAR APAC 2023" style="width:100%;height:100%;object-fit:contain;border-radius:8px;"></div>
+                <div class="event-name">NEAR APAC 2023</div>
+            </a>
+        <a href="https://www.youtube.com/watch?v=1EoGIDeJUes" target="_blank" class="event-card">
+                <div class="event-image"><img src="images/img-096f8183bce1.jpg" alt="TOKEN2049 Dubai 2024" style="width:100%;height:100%;object-fit:contain;border-radius:8px;"></div>
+                <div class="event-name">TOKEN2049 Dubai 2024</div>
+            </a>
+        <a href="https://www.youtube.com/watch?v=JvUjoBlmH0k" target="_blank" class="event-card">
+                <div class="event-image"><img src="images/img-572d28d8474a.jpg" alt="Global Blockchain Show Dubai 2024" style="width:100%;height:100%;object-fit:contain;border-radius:8px;"></div>
+                <div class="event-name">Global Blockchain Show Dubai 2024</div>
+            </a>
+        <a href="https://x.com/fizenapp/status/1836613793834791111" target="_blank" class="event-card">
+                <div class="event-image"><img src="images/img-a7c1fed35f90.jpg" alt="TOKEN2049 Singapore 2024" style="width:100%;height:100%;object-fit:contain;border-radius:8px;"></div>
+                <div class="event-name">TOKEN2049 Singapore 2024</div>
+            </a>
+        <a href="https://www.youtube.com/watch?v=K5L50TkUSgk" target="_blank" class="event-card">
+                <div class="event-image"><img src="images/img-2f8f96d0a812.jpg" alt="Tour de USDT by Fizen x Tether" style="width:100%;height:100%;object-fit:contain;border-radius:8px;"></div>
+                <div class="event-name">Tour de USDT by Fizen x Tether</div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+        <div class="faq-header">
+            <h3 class="faq-title">What is Fizen Card?</h3>
+            <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+            Fizen Card is a virtual Visa card that allows you to spend USDT directly. Convert your USDT to USD 1:1 and use your card at any merchant that accepts Visa worldwide. Backed by Tether, it offers secure, fast, and globally accepted payments.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-header">
+            <h3 class="faq-title">How does the free card offer work?</h3>
+            <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+            For a limited time, Fizen is waiving the $9.99 card creation fee. Your card will be completely free to create and activate. This offer is only available via this exclusive link.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-header">
+            <h3 class="faq-title">What are the fees?</h3>
+            <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+            Card creation is $0 (normally $9.99). First month maintenance is free. Top-ups are free (minus gas fees). FX conversion fee is 1%, and top-up conversion is 0.5%. See our website for full fee details.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-header">
+            <h3 class="faq-title">Where can I use Fizen Card?</h3>
+            <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+            You can use Fizen Card anywhere Visa is accepted, including 150M+ merchants across 200+ countries. You can also add it to Apple Pay and Google Pay for contactless payments.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-header">
+            <h3 class="faq-title">Is Fizen Card safe?</h3>
+            <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+            Yes. Fizen Card uses industry-standard security with SSL encryption, 3D Secure verification, and is backed by Tether. Your card is virtual and can be frozen instantly if needed. Fizen never stores sensitive data on your device.
+        </div>
+    </div>
+</section>
+
+<section class="final-cta">
+    <div class="final-cta-content">
+        <h2 style="font-size:clamp(28px,4vw,44px);font-weight:800;letter-spacing:-0.5px;">Shop the world like it's 2020</h2>
+        <a href="https://app.fizen.io?utm_source=landing&utm_medium=web&utm_campaign=apr-free-card-camp&utm_content=en" class="btn-cta" style="display:inline-block;padding:16px 48px;font-size:17px;font-weight:700;background:#fff;color:#500EC1;border:none;border-radius:12px;text-decoration:none;margin-top:16px;transition:all 0.3s;box-shadow:0 4px 20px rgba(0,0,0,0.15);">Get Your Free Card</a>
+        <p style="font-size:14px;color:rgba(255,255,255,0.6);margin-top:12px;">No hidden fees</p>
+    </div>
+</section>
+
+    
+
+
+
+
+
+
+
+</main>
+<!-- FOOTER -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-logo">
+            <img src="images/img-67770d4f13fd.png" alt="Fizen">
+        </div>
+        <div class="footer-links">
+            <a href="https://docs.fizen.io/card" target="_blank">Documentation</a>
+            <a href="https://fizenio.gitbook.io/docs/information/privacy-policy" target="_blank">Privacy Policy</a>
+            <a href="https://fizenio.gitbook.io/docs/information/terms-of-use" target="_blank">Terms & Conditions</a>
+        </div>
+    </div>
+    <div class="footer-divider">
+        <div class="footer-bottom">
+            <p>© 2022-2026 Fizen. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in-view');
+            }
+        });
+    }, observerOptions);
+
+    // Observe elements with fade-in-up animation
+    document.querySelectorAll('.why-card, .step, .faq-item, .event-card').forEach(el => {
+        observer.observe(el);
+    });
+
+    // FAQ Accordion
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const header = item.querySelector('.faq-header');
+        header.addEventListener('click', () => {
+            // Close other items
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item && otherItem.classList.contains('active')) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            // Toggle current item
+            item.classList.toggle('active');
+        });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+</script>
+
+<script>
+// Countdown timer - ends April 30, 2026
+(function() {
+    var end = new Date('2026-04-30T23:59:59').getTime();
+    function update() {
+        var now = new Date().getTime();
+        var diff = end - now;
+        if (diff <= 0) return;
+        var d = Math.floor(diff / 86400000);
+        var h = Math.floor((diff % 86400000) / 3600000);
+        var m = Math.floor((diff % 3600000) / 60000);
+        var s = Math.floor((diff % 60000) / 1000);
+        var de = document.getElementById('countdown-days');
+        if (de) de.textContent = d < 10 ? '0' + d : d;
+        var he = document.getElementById('countdown-hours');
+        if (he) he.textContent = h < 10 ? '0' + h : h;
+        var me = document.getElementById('countdown-minutes');
+        if (me) me.textContent = m < 10 ? '0' + m : m;
+        var se = document.getElementById('countdown-seconds');
+        if (se) se.textContent = s < 10 ? '0' + s : s;
+    }
+    update();
+    setInterval(update, 1000);
+})();
+</script>
+</body>
+</html>
