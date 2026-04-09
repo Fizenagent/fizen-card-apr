@@ -1352,7 +1352,7 @@
         var trackingData = window.fzTracking || {};
         
         if (Object.keys(trackingData).length > 0) {
-            document.querySelectorAll('a[href*="app.fizen.io"], a[href*="fizen.io/card"]').forEach(function(link) {
+            document.querySelectorAll('a[href*="app.fizen.io"], a[href*="fizen.io/card"], a[href*="fizen.io/card-creation"]').forEach(function(link) {
                 try {
                     var url = new URL(link.href);
                     Object.keys(trackingData).forEach(function(key) {
@@ -1371,7 +1371,7 @@
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         // Track all CTA clicks (buttons linking to app.fizen.io)
-        document.querySelectorAll('a[href*="app.fizen.io"]').forEach(function(link) {
+        document.querySelectorAll('a[href*="app.fizen.io"], a[href*="fizen.io/card-creation"]').forEach(function(link) {
             link.addEventListener('click', function(e) {
                 var data = {
                     event_category: 'conversion',
