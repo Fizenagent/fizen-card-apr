@@ -9,13 +9,13 @@
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="Fizen Card | This Card is Freedom | Spend USDT Like Cash">
     <meta property="og:description" content="Convert USDT to USD 1:1 and spend with Visa. Backed by Tether. $0 card creation for limited time.">
-    <meta property="og:image" content="https://card.fizen.io/images/og-card.png">
+    <meta property="og:image" content="https://fizenagent.github.io/fizen-card-apr/images/og-card.png">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://fizen.io/card">
+    <meta property="og:url" content="https://fizenagent.github.io/fizen-card-apr/">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Fizen Card | This Card is Freedom | Spend USDT Like Cash">
     <meta name="twitter:description" content="USDT to USD Visa card backed by Tether. Apple Pay & Google Pay. 150M+ merchants. $0 creation fee.">
-    <link rel="canonical" href="https://card.fizen.io/">
+    <link rel="canonical" href="https://fizenagent.github.io/fizen-card-apr/">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
@@ -143,6 +143,44 @@
             transform: translateY(-2px);
             box-shadow: 0 8px 16px rgba(80, 14, 193, 0.25);
         }
+        /* LANGUAGE SWITCHER */
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            background: rgba(240, 235, 255, 0.6);
+            border-radius: 6px;
+            padding: 2px;
+        }
+
+        .lang-switcher a {
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 500;
+            color: #6B7280;
+            transition: all 0.2s ease;
+            line-height: 1;
+        }
+
+        .lang-switcher a:hover {
+            color: #500EC1;
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .lang-switcher a.active {
+            background: #500EC1;
+            color: white;
+            font-weight: 600;
+        }
+
 
         /* HERO SECTION */
         .hero-wrapper {
@@ -1008,6 +1046,15 @@
         }
 
         @media (max-width: 768px) {
+            .lang-switcher a {
+                padding: 4px 7px;
+                font-size: 11px;
+            }
+
+            .header-nav {
+                gap: 10px;
+            }
+
             header {
                 padding: 12px 20px;
             }
@@ -1091,6 +1138,20 @@
         }
 
         @media (max-width: 480px) {
+            .lang-switcher a {
+                padding: 3px 5px;
+                font-size: 10px;
+            }
+
+            .header-nav {
+                gap: 8px;
+            }
+
+            .btn-header {
+                padding: 10px 16px;
+                font-size: 13px;
+            }
+
             .hero-content h1 {
                 font-size: 28px;
                 margin-bottom: 16px;
@@ -1194,89 +1255,286 @@
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"Organization","name":"Fizen","url":"https://fizen.io","description":"Crypto payments and virtual Visa card platform backed by Tether.","foundingDate":"2022","sameAs":["https://twitter.com/fizenio","https://t.me/fizen_io"]}
     </script>
+<!-- ========== FIZEN TRACKING SUITE ========== -->
+    
+    <!-- 1. Cookie + UTM Persistence (runs first, before GA4) -->
+    <script>
+    (function() {
+        // Cookie helpers
+        function setCookie(name, value, days) {
+            var d = new Date();
+            d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+            document.cookie = name + '=' + encodeURIComponent(value) + ';expires=' + d.toUTCString() + ';path=/;SameSite=Lax';
+        }
+        function getCookie(name) {
+            var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return match ? decodeURIComponent(match[2]) : null;
+        }
 
-    <link rel="canonical" href="https://fizen.io/card/" />
-    <link rel="alternate" hreflang="en" href="https://fizen.io/card/" />
-    <link rel="alternate" hreflang="ko" href="https://fizen.io/card/kr/" />
-    <link rel="alternate" hreflang="ru" href="https://fizen.io/card/ru/" />
-    <link rel="alternate" hreflang="id" href="https://fizen.io/card/id/" />
-    <link rel="alternate" hreflang="zh-Hans" href="https://fizen.io/card/cn/" />
-    <link rel="alternate" hreflang="x-default" href="https://fizen.io/card/" />
+        // Capture all tracking params from URL
+        var params = new URLSearchParams(window.location.search);
+        var trackingKeys = [
+            'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term',
+            'ref', 'referral-code', 'kol', 'affiliate',
+            'af_siteid', 'af_channel', 'af_sub1', 'af_sub2', 'pid', 'shortlink'
+        ];
 
-    <!-- Google Analytics 4 -->
+        var hasNewParams = false;
+        var trackingData = {};
+
+        // If URL has tracking params, save them to cookies (30 day attribution window)
+        trackingKeys.forEach(function(key) {
+            var val = params.get(key);
+            if (val) {
+                setCookie('fz_' + key, val, 30);
+                trackingData[key] = val;
+                hasNewParams = true;
+            }
+        });
+
+        // If no new params in URL, restore from cookies
+        if (!hasNewParams) {
+            trackingKeys.forEach(function(key) {
+                var val = getCookie('fz_' + key);
+                if (val) trackingData[key] = val;
+            });
+        }
+
+        // First touch timestamp
+        if (!getCookie('fz_first_touch')) {
+            setCookie('fz_first_touch', new Date().toISOString(), 90);
+            setCookie('fz_landing_page', window.location.pathname, 90);
+            setCookie('fz_landing_referrer', document.referrer || 'direct', 90);
+        }
+
+        // Session counter
+        var sessions = parseInt(getCookie('fz_sessions') || '0') + 1;
+        if (!sessionStorage.getItem('fz_session_counted')) {
+            setCookie('fz_sessions', sessions, 90);
+            sessionStorage.setItem('fz_session_counted', '1');
+        }
+
+        // Store globally for other scripts
+        window.fzTracking = trackingData;
+        window.fzTrackingKeys = trackingKeys;
+    })();
+    </script>
+
+    <!-- 2. Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=GA4FIZEN"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'GA4FIZEN', {
-            page_location: window.location.href,
-            page_title: document.title
-        });
         
-        // Track CTA clicks
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('a[href*="app.fizen.io"]').forEach(function(link) {
-                link.addEventListener('click', function(e) {
-                    gtag('event', 'cta_click', {
-                        event_category: 'conversion',
-                        event_label: this.textContent.trim(),
-                        link_url: this.href
-                    });
-                });
-            });
-        });
+        // Config with custom dimensions
+        var ga4Config = {
+            page_location: window.location.href,
+            page_title: document.title,
+            send_page_view: true
+        };
+        
+        // Pass KOL/affiliate source as custom dimensions
+        if (window.fzTracking) {
+            if (window.fzTracking.kol) ga4Config.kol_id = window.fzTracking.kol;
+            if (window.fzTracking.ref) ga4Config.referral_code = window.fzTracking.ref;
+            if (window.fzTracking.utm_source) ga4Config.traffic_source = window.fzTracking.utm_source;
+            if (window.fzTracking.affiliate) ga4Config.affiliate_id = window.fzTracking.affiliate;
+        }
+        
+        gtag('config', 'GA4FIZEN', ga4Config);
     </script>
 
-    <!-- AppsFlyer Smart Banner -->
+    <!-- 3. UTM Passthrough to CTA links -->
     <script>
-        // AppsFlyer OneLink Smart Script
-        // Replace APPFLYERSFIZEN with your actual OneLink subdomain
+    document.addEventListener('DOMContentLoaded', function() {
+        // Build params from cookies (persistent across pages)
+        var trackingData = window.fzTracking || {};
+        
+        if (Object.keys(trackingData).length > 0) {
+            document.querySelectorAll('a[href*="app.fizen.io"], a[href*="fizen.io/card"]').forEach(function(link) {
+                try {
+                    var url = new URL(link.href);
+                    Object.keys(trackingData).forEach(function(key) {
+                        url.searchParams.set(key, trackingData[key]);
+                    });
+                    // Add page language
+                    url.searchParams.set('lang', document.documentElement.lang || 'en');
+                    link.href = url.toString();
+                } catch(e) {}
+            });
+        }
+    });
+    </script>
+
+    <!-- 4. CTA Click Tracking -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Track all CTA clicks (buttons linking to app.fizen.io)
+        document.querySelectorAll('a[href*="app.fizen.io"]').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                var data = {
+                    event_category: 'conversion',
+                    event_label: this.textContent.trim().substring(0, 50),
+                    link_url: this.href,
+                    page_language: document.documentElement.lang || 'en',
+                    button_location: getButtonSection(this)
+                };
+                // Add KOL/affiliate attribution
+                if (window.fzTracking) {
+                    if (window.fzTracking.kol) data.kol_id = window.fzTracking.kol;
+                    if (window.fzTracking.ref) data.referral_code = window.fzTracking.ref;
+                    if (window.fzTracking.utm_source) data.traffic_source = window.fzTracking.utm_source;
+                }
+                gtag('event', 'cta_click_card_create', data);
+            });
+        });
+
+        // Detect which section the button is in
+        function getButtonSection(el) {
+            var section = el.closest('section, [class*="hero"], [class*="limited"], [class*="sticky"], footer, nav');
+            if (!section) return 'unknown';
+            var cls = section.className || '';
+            if (cls.match(/hero/i)) return 'hero';
+            if (cls.match(/limited|offer|april/i)) return 'limited_offer';
+            if (cls.match(/sticky|float/i)) return 'sticky_cta';
+            if (cls.match(/nav/i)) return 'navbar';
+            if (section.tagName === 'NAV') return 'navbar';
+            return cls.substring(0, 30) || section.tagName.toLowerCase();
+        }
+    });
+    </script>
+
+    <!-- 5. Scroll Depth Tracking -->
+    <script>
+    (function() {
+        var milestones = [25, 50, 75, 90, 100];
+        var fired = {};
+        
+        function getScrollPercent() {
+            var h = document.documentElement;
+            var b = document.body;
+            var st = h.scrollTop || b.scrollTop;
+            var sh = h.scrollHeight || b.scrollHeight;
+            var ch = h.clientHeight;
+            return Math.round((st / (sh - ch)) * 100);
+        }
+
+        var scrollTimer;
+        window.addEventListener('scroll', function() {
+            clearTimeout(scrollTimer);
+            scrollTimer = setTimeout(function() {
+                var pct = getScrollPercent();
+                milestones.forEach(function(m) {
+                    if (pct >= m && !fired[m]) {
+                        fired[m] = true;
+                        gtag('event', 'scroll_depth', {
+                            event_category: 'engagement',
+                            event_label: m + '%',
+                            scroll_percentage: m,
+                            page_language: document.documentElement.lang || 'en',
+                            kol_id: (window.fzTracking || {}).kol || '',
+                            traffic_source: (window.fzTracking || {}).utm_source || ''
+                        });
+                    }
+                });
+            }, 150);
+        });
+    })();
+    </script>
+
+    <!-- 6. Time on Page Tracking -->
+    <script>
+    (function() {
+        var startTime = Date.now();
+        var intervals = [15, 30, 60, 120, 300]; // seconds
+        var firedTime = {};
+
+        setInterval(function() {
+            var elapsed = Math.floor((Date.now() - startTime) / 1000);
+            intervals.forEach(function(sec) {
+                if (elapsed >= sec && !firedTime[sec]) {
+                    firedTime[sec] = true;
+                    gtag('event', 'time_on_page', {
+                        event_category: 'engagement',
+                        event_label: sec + 's',
+                        seconds: sec,
+                        page_language: document.documentElement.lang || 'en'
+                    });
+                }
+            });
+        }, 5000);
+
+        // Track exit
+        window.addEventListener('beforeunload', function() {
+            var totalTime = Math.floor((Date.now() - startTime) / 1000);
+            navigator.sendBeacon && gtag('event', 'page_exit', {
+                event_category: 'engagement',
+                time_spent_seconds: totalTime,
+                page_language: document.documentElement.lang || 'en',
+                kol_id: (window.fzTracking || {}).kol || ''
+            });
+        });
+    })();
+    </script>
+
+    <!-- 7. Section Visibility Tracking -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        if (!('IntersectionObserver' in window)) return;
+        
+        var sections = {
+            'hero': '[class*="hero"], section:first-of-type',
+            'community': '[class*="community"], [class*="global"]',
+            'how_it_works': '[class*="how"], [class*="step"]',
+            'why_fizen': '[class*="why"]',
+            'limited_offer': '[class*="limited"], [class*="april"], [class*="offer"]',
+            'tether': '[class*="tether"], [class*="backed"]',
+            'reviews': '[class*="review"], [class*="testimonial"]',
+            'faq': '[class*="faq"]'
+        };
+
+        var viewedSections = {};
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    var name = entry.target.dataset.trackSection;
+                    if (name && !viewedSections[name]) {
+                        viewedSections[name] = true;
+                        gtag('event', 'section_view', {
+                            event_category: 'engagement',
+                            section_name: name,
+                            page_language: document.documentElement.lang || 'en'
+                        });
+                    }
+                }
+            });
+        }, { threshold: 0.3 });
+
+        Object.keys(sections).forEach(function(name) {
+            var el = document.querySelector(sections[name]);
+            if (el) {
+                el.dataset.trackSection = name;
+                observer.observe(el);
+            }
+        });
+    });
+    </script>
+
+    <!-- AppsFlyer Smart Banner (activate when ready) -->
+    <!--
+    <script>
         !function(t,e,n,s,a,c,i,o,p){t.AppsFlyerSdkObject=a,t.AF=t.AF||function(){
         (t.AF.q=t.AF.q||[]).push([Date.now()].concat(Array.prototype.slice.call(arguments)))
         },t.AF.id=t.AF.id||i,t.AF.plugins={},o=e.createElement(n),
         p=e.getElementsByTagName(n)[0],o.async=1,o.src="https://websdk.appsflyer.com?"+(c.length>0?"st="+c.split(",").sort().join(",")+"&":"")+(i.length>0?"af_id="+i:""),
         p.parentNode.insertBefore(o,p)}(window,document,"script",0,"AF","banners",
-        "{your-af-web-key}");
-        
-        // AF Smart Banner config
-        AF('banners', 'showBanner', {
-            bannerContainerQuery: "#af-banner-container",
-            additionalParams: {
-                af_siteid: document.querySelector('meta[name="af-siteid"]')?.content || "web_landing",
-                af_channel: "web",
-                af_adset: document.querySelector('html').lang || "en",
-                af_ad: window.location.pathname
-            }
-        });
+        "APPFLYERSFIZEN");
+        AF('banners', 'showBanner', { bannerContainerQuery: "#af-banner-container" });
     </script>
     <div id="af-banner-container"></div>
-
-    <!-- UTM Parameter Forwarding -->
-    <script>
-        // Capture UTM params from URL and append to all CTA links
-        document.addEventListener('DOMContentLoaded', function() {
-            var params = new URLSearchParams(window.location.search);
-            var utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term',
-                           'af_siteid', 'af_channel', 'af_sub1', 'af_sub2', 'pid', 'shortlink', 'referral-code'];
-            
-            var utmParams = {};
-            utmKeys.forEach(function(key) {
-                if (params.get(key)) utmParams[key] = params.get(key);
-            });
-            
-            // If UTM params exist in URL, append them to all CTA links
-            if (Object.keys(utmParams).length > 0) {
-                document.querySelectorAll('a[href*="app.fizen.io"]').forEach(function(link) {
-                    var url = new URL(link.href);
-                    Object.keys(utmParams).forEach(function(key) {
-                        url.searchParams.set(key, utmParams[key]);
-                    });
-                    link.href = url.toString();
-                });
-            }
-        });
-    </script>
+    -->
+    <!-- ========== END TRACKING SUITE ========== -->
 
 </head>
 <body>
@@ -1286,7 +1544,16 @@
     <div class="header-logo">
         <img src="images/img-3289d1c65142.png" alt="Fizen">
     </div>
-    <a href="https://app.fizen.io?utm_source=landing&utm_medium=web&utm_campaign=apr-free-card-camp&utm_content=en" class="btn-header">Get Your Card</a>
+    <div class="header-nav">
+        <div class="lang-switcher">
+            <a href="#" class="active">EN</a>
+            <a href="ru.html">RU</a>
+            <a href="kr.html">KR</a>
+            <a href="id.html">ID</a>
+            <a href="cn.html">CN</a>
+        </div>
+        <a href="https://app.fizen.io?utm_source=landing&utm_medium=web&utm_campaign=apr-free-card-camp&utm_content=en" class="btn-header">Get Your Card</a>
+    </div>
 </header>
 
 <main>

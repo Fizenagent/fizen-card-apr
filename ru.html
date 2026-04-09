@@ -9,13 +9,13 @@
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="Fizen Card | Тратьте USDT как наличные">
     <meta property="og:description" content="USDT в USD мгновенно. 150 млн+ торговых точек. Инвестиции Tether. Apple Pay и Google Pay.">
-    <meta property="og:image" content="https://card.fizen.io/images/og-card.png">
+    <meta property="og:image" content="https://fizenagent.github.io/fizen-card-apr/images/og-card.png">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://fizen.io/card">
+    <meta property="og:url" content="https://fizenagent.github.io/fizen-card-apr/ru.html">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Fizen Card | USDT как наличные | Visa карта">
     <meta name="twitter:description" content="USDT в USD мгновенно. 150 млн+ торговых точек. Tether. Apple Pay и Google Pay.">
-    <link rel="canonical" href="https://card.fizen.io/ru.html">
+    <link rel="canonical" href="https://fizenagent.github.io/fizen-card-apr/ru.html">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
@@ -143,6 +143,44 @@
             transform: translateY(-2px);
             box-shadow: 0 8px 16px rgba(80, 14, 193, 0.25);
         }
+        /* LANGUAGE SWITCHER */
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            background: rgba(240, 235, 255, 0.6);
+            border-radius: 6px;
+            padding: 2px;
+        }
+
+        .lang-switcher a {
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 500;
+            color: #6B7280;
+            transition: all 0.2s ease;
+            line-height: 1;
+        }
+
+        .lang-switcher a:hover {
+            color: #500EC1;
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .lang-switcher a.active {
+            background: #500EC1;
+            color: white;
+            font-weight: 600;
+        }
+
 
         /* HERO SECTION */
         .hero-wrapper {
@@ -1008,6 +1046,15 @@
         }
 
         @media (max-width: 768px) {
+            .lang-switcher a {
+                padding: 4px 7px;
+                font-size: 11px;
+            }
+
+            .header-nav {
+                gap: 10px;
+            }
+
             header {
                 padding: 12px 20px;
             }
@@ -1091,6 +1138,20 @@
         }
 
         @media (max-width: 480px) {
+            .lang-switcher a {
+                padding: 3px 5px;
+                font-size: 10px;
+            }
+
+            .header-nav {
+                gap: 8px;
+            }
+
+            .btn-header {
+                padding: 10px 16px;
+                font-size: 13px;
+            }
+
             .hero-content h1 {
                 font-size: 28px;
                 margin-bottom: 16px;
@@ -1193,89 +1254,286 @@
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"Organization","name":"Fizen","url":"https://fizen.io","description":"Crypto payments and virtual Visa card platform backed by Tether.","foundingDate":"2022","sameAs":["https://twitter.com/fizenio","https://t.me/fizen_io"]}
     </script>
+<!-- ========== FIZEN TRACKING SUITE ========== -->
+    
+    <!-- 1. Cookie + UTM Persistence (runs first, before GA4) -->
+    <script>
+    (function() {
+        // Cookie helpers
+        function setCookie(name, value, days) {
+            var d = new Date();
+            d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+            document.cookie = name + '=' + encodeURIComponent(value) + ';expires=' + d.toUTCString() + ';path=/;SameSite=Lax';
+        }
+        function getCookie(name) {
+            var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return match ? decodeURIComponent(match[2]) : null;
+        }
 
-    <link rel="canonical" href="https://fizen.io/card/ru/" />
-    <link rel="alternate" hreflang="en" href="https://fizen.io/card/" />
-    <link rel="alternate" hreflang="ko" href="https://fizen.io/card/kr/" />
-    <link rel="alternate" hreflang="ru" href="https://fizen.io/card/ru/" />
-    <link rel="alternate" hreflang="id" href="https://fizen.io/card/id/" />
-    <link rel="alternate" hreflang="zh-Hans" href="https://fizen.io/card/cn/" />
-    <link rel="alternate" hreflang="x-default" href="https://fizen.io/card/" />
+        // Capture all tracking params from URL
+        var params = new URLSearchParams(window.location.search);
+        var trackingKeys = [
+            'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term',
+            'ref', 'referral-code', 'kol', 'affiliate',
+            'af_siteid', 'af_channel', 'af_sub1', 'af_sub2', 'pid', 'shortlink'
+        ];
 
-    <!-- Google Analytics 4 -->
+        var hasNewParams = false;
+        var trackingData = {};
+
+        // If URL has tracking params, save them to cookies (30 day attribution window)
+        trackingKeys.forEach(function(key) {
+            var val = params.get(key);
+            if (val) {
+                setCookie('fz_' + key, val, 30);
+                trackingData[key] = val;
+                hasNewParams = true;
+            }
+        });
+
+        // If no new params in URL, restore from cookies
+        if (!hasNewParams) {
+            trackingKeys.forEach(function(key) {
+                var val = getCookie('fz_' + key);
+                if (val) trackingData[key] = val;
+            });
+        }
+
+        // First touch timestamp
+        if (!getCookie('fz_first_touch')) {
+            setCookie('fz_first_touch', new Date().toISOString(), 90);
+            setCookie('fz_landing_page', window.location.pathname, 90);
+            setCookie('fz_landing_referrer', document.referrer || 'direct', 90);
+        }
+
+        // Session counter
+        var sessions = parseInt(getCookie('fz_sessions') || '0') + 1;
+        if (!sessionStorage.getItem('fz_session_counted')) {
+            setCookie('fz_sessions', sessions, 90);
+            sessionStorage.setItem('fz_session_counted', '1');
+        }
+
+        // Store globally for other scripts
+        window.fzTracking = trackingData;
+        window.fzTrackingKeys = trackingKeys;
+    })();
+    </script>
+
+    <!-- 2. Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=GA4FIZEN"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'GA4FIZEN', {
-            page_location: window.location.href,
-            page_title: document.title
-        });
         
-        // Track CTA clicks
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('a[href*="app.fizen.io"]').forEach(function(link) {
-                link.addEventListener('click', function(e) {
-                    gtag('event', 'cta_click', {
-                        event_category: 'conversion',
-                        event_label: this.textContent.trim(),
-                        link_url: this.href
-                    });
-                });
-            });
-        });
+        // Config with custom dimensions
+        var ga4Config = {
+            page_location: window.location.href,
+            page_title: document.title,
+            send_page_view: true
+        };
+        
+        // Pass KOL/affiliate source as custom dimensions
+        if (window.fzTracking) {
+            if (window.fzTracking.kol) ga4Config.kol_id = window.fzTracking.kol;
+            if (window.fzTracking.ref) ga4Config.referral_code = window.fzTracking.ref;
+            if (window.fzTracking.utm_source) ga4Config.traffic_source = window.fzTracking.utm_source;
+            if (window.fzTracking.affiliate) ga4Config.affiliate_id = window.fzTracking.affiliate;
+        }
+        
+        gtag('config', 'GA4FIZEN', ga4Config);
     </script>
 
-    <!-- AppsFlyer Smart Banner -->
+    <!-- 3. UTM Passthrough to CTA links -->
     <script>
-        // AppsFlyer OneLink Smart Script
-        // Replace APPFLYERSFIZEN with your actual OneLink subdomain
+    document.addEventListener('DOMContentLoaded', function() {
+        // Build params from cookies (persistent across pages)
+        var trackingData = window.fzTracking || {};
+        
+        if (Object.keys(trackingData).length > 0) {
+            document.querySelectorAll('a[href*="app.fizen.io"], a[href*="fizen.io/card"]').forEach(function(link) {
+                try {
+                    var url = new URL(link.href);
+                    Object.keys(trackingData).forEach(function(key) {
+                        url.searchParams.set(key, trackingData[key]);
+                    });
+                    // Add page language
+                    url.searchParams.set('lang', document.documentElement.lang || 'en');
+                    link.href = url.toString();
+                } catch(e) {}
+            });
+        }
+    });
+    </script>
+
+    <!-- 4. CTA Click Tracking -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Track all CTA clicks (buttons linking to app.fizen.io)
+        document.querySelectorAll('a[href*="app.fizen.io"]').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                var data = {
+                    event_category: 'conversion',
+                    event_label: this.textContent.trim().substring(0, 50),
+                    link_url: this.href,
+                    page_language: document.documentElement.lang || 'en',
+                    button_location: getButtonSection(this)
+                };
+                // Add KOL/affiliate attribution
+                if (window.fzTracking) {
+                    if (window.fzTracking.kol) data.kol_id = window.fzTracking.kol;
+                    if (window.fzTracking.ref) data.referral_code = window.fzTracking.ref;
+                    if (window.fzTracking.utm_source) data.traffic_source = window.fzTracking.utm_source;
+                }
+                gtag('event', 'cta_click_card_create', data);
+            });
+        });
+
+        // Detect which section the button is in
+        function getButtonSection(el) {
+            var section = el.closest('section, [class*="hero"], [class*="limited"], [class*="sticky"], footer, nav');
+            if (!section) return 'unknown';
+            var cls = section.className || '';
+            if (cls.match(/hero/i)) return 'hero';
+            if (cls.match(/limited|offer|april/i)) return 'limited_offer';
+            if (cls.match(/sticky|float/i)) return 'sticky_cta';
+            if (cls.match(/nav/i)) return 'navbar';
+            if (section.tagName === 'NAV') return 'navbar';
+            return cls.substring(0, 30) || section.tagName.toLowerCase();
+        }
+    });
+    </script>
+
+    <!-- 5. Scroll Depth Tracking -->
+    <script>
+    (function() {
+        var milestones = [25, 50, 75, 90, 100];
+        var fired = {};
+        
+        function getScrollPercent() {
+            var h = document.documentElement;
+            var b = document.body;
+            var st = h.scrollTop || b.scrollTop;
+            var sh = h.scrollHeight || b.scrollHeight;
+            var ch = h.clientHeight;
+            return Math.round((st / (sh - ch)) * 100);
+        }
+
+        var scrollTimer;
+        window.addEventListener('scroll', function() {
+            clearTimeout(scrollTimer);
+            scrollTimer = setTimeout(function() {
+                var pct = getScrollPercent();
+                milestones.forEach(function(m) {
+                    if (pct >= m && !fired[m]) {
+                        fired[m] = true;
+                        gtag('event', 'scroll_depth', {
+                            event_category: 'engagement',
+                            event_label: m + '%',
+                            scroll_percentage: m,
+                            page_language: document.documentElement.lang || 'en',
+                            kol_id: (window.fzTracking || {}).kol || '',
+                            traffic_source: (window.fzTracking || {}).utm_source || ''
+                        });
+                    }
+                });
+            }, 150);
+        });
+    })();
+    </script>
+
+    <!-- 6. Time on Page Tracking -->
+    <script>
+    (function() {
+        var startTime = Date.now();
+        var intervals = [15, 30, 60, 120, 300]; // seconds
+        var firedTime = {};
+
+        setInterval(function() {
+            var elapsed = Math.floor((Date.now() - startTime) / 1000);
+            intervals.forEach(function(sec) {
+                if (elapsed >= sec && !firedTime[sec]) {
+                    firedTime[sec] = true;
+                    gtag('event', 'time_on_page', {
+                        event_category: 'engagement',
+                        event_label: sec + 's',
+                        seconds: sec,
+                        page_language: document.documentElement.lang || 'en'
+                    });
+                }
+            });
+        }, 5000);
+
+        // Track exit
+        window.addEventListener('beforeunload', function() {
+            var totalTime = Math.floor((Date.now() - startTime) / 1000);
+            navigator.sendBeacon && gtag('event', 'page_exit', {
+                event_category: 'engagement',
+                time_spent_seconds: totalTime,
+                page_language: document.documentElement.lang || 'en',
+                kol_id: (window.fzTracking || {}).kol || ''
+            });
+        });
+    })();
+    </script>
+
+    <!-- 7. Section Visibility Tracking -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        if (!('IntersectionObserver' in window)) return;
+        
+        var sections = {
+            'hero': '[class*="hero"], section:first-of-type',
+            'community': '[class*="community"], [class*="global"]',
+            'how_it_works': '[class*="how"], [class*="step"]',
+            'why_fizen': '[class*="why"]',
+            'limited_offer': '[class*="limited"], [class*="april"], [class*="offer"]',
+            'tether': '[class*="tether"], [class*="backed"]',
+            'reviews': '[class*="review"], [class*="testimonial"]',
+            'faq': '[class*="faq"]'
+        };
+
+        var viewedSections = {};
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    var name = entry.target.dataset.trackSection;
+                    if (name && !viewedSections[name]) {
+                        viewedSections[name] = true;
+                        gtag('event', 'section_view', {
+                            event_category: 'engagement',
+                            section_name: name,
+                            page_language: document.documentElement.lang || 'en'
+                        });
+                    }
+                }
+            });
+        }, { threshold: 0.3 });
+
+        Object.keys(sections).forEach(function(name) {
+            var el = document.querySelector(sections[name]);
+            if (el) {
+                el.dataset.trackSection = name;
+                observer.observe(el);
+            }
+        });
+    });
+    </script>
+
+    <!-- AppsFlyer Smart Banner (activate when ready) -->
+    <!--
+    <script>
         !function(t,e,n,s,a,c,i,o,p){t.AppsFlyerSdkObject=a,t.AF=t.AF||function(){
         (t.AF.q=t.AF.q||[]).push([Date.now()].concat(Array.prototype.slice.call(arguments)))
         },t.AF.id=t.AF.id||i,t.AF.plugins={},o=e.createElement(n),
         p=e.getElementsByTagName(n)[0],o.async=1,o.src="https://websdk.appsflyer.com?"+(c.length>0?"st="+c.split(",").sort().join(",")+"&":"")+(i.length>0?"af_id="+i:""),
         p.parentNode.insertBefore(o,p)}(window,document,"script",0,"AF","banners",
-        "{your-af-web-key}");
-        
-        // AF Smart Banner config
-        AF('banners', 'showBanner', {
-            bannerContainerQuery: "#af-banner-container",
-            additionalParams: {
-                af_siteid: document.querySelector('meta[name="af-siteid"]')?.content || "web_landing",
-                af_channel: "web",
-                af_adset: document.querySelector('html').lang || "en",
-                af_ad: window.location.pathname
-            }
-        });
+        "APPFLYERSFIZEN");
+        AF('banners', 'showBanner', { bannerContainerQuery: "#af-banner-container" });
     </script>
     <div id="af-banner-container"></div>
-
-    <!-- UTM Parameter Forwarding -->
-    <script>
-        // Capture UTM params from URL and append to all CTA links
-        document.addEventListener('DOMContentLoaded', function() {
-            var params = new URLSearchParams(window.location.search);
-            var utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term',
-                           'af_siteid', 'af_channel', 'af_sub1', 'af_sub2', 'pid', 'shortlink', 'referral-code'];
-            
-            var utmParams = {};
-            utmKeys.forEach(function(key) {
-                if (params.get(key)) utmParams[key] = params.get(key);
-            });
-            
-            // If UTM params exist in URL, append them to all CTA links
-            if (Object.keys(utmParams).length > 0) {
-                document.querySelectorAll('a[href*="app.fizen.io"]').forEach(function(link) {
-                    var url = new URL(link.href);
-                    Object.keys(utmParams).forEach(function(key) {
-                        url.searchParams.set(key, utmParams[key]);
-                    });
-                    link.href = url.toString();
-                });
-            }
-        });
-    </script>
+    -->
+    <!-- ========== END TRACKING SUITE ========== -->
 
 </head>
 <body>
@@ -1285,7 +1543,16 @@
     <div class="header-logo">
         <img src="images/img-3289d1c65142.png" alt="Fizen">
     </div>
-    <a href="https://app.fizen.io?utm_source=landing&utm_medium=web&utm_campaign=apr-free-card-camp&utm_content=ru" class="btn-header">Получить карту</a>
+    <div class="header-nav">
+        <div class="lang-switcher">
+            <a href="index.html">EN</a>
+            <a href="#" class="active">RU</a>
+            <a href="kr.html">KR</a>
+            <a href="id.html">ID</a>
+            <a href="cn.html">CN</a>
+        </div>
+        <a href="https://app.fizen.io?utm_source=landing&utm_medium=web&utm_campaign=apr-free-card-camp&utm_content=ru" class="btn-header">Получить карту</a>
+    </div>
 </header>
 
 <main>
@@ -1808,323 +2075,4 @@
 })();
 </script>
 </body>
-</html>Получить карту бесплатно</a>
-            <p style="font-size:13px;color:rgba(255,255,255,0.4);margin-top:16px;">Без скрытых платежей &middot; Отмена в любой момент</p>
-        </div>
-        
-        <div style="flex:0 0 320px;max-width:320px;margin:0 auto;position:relative;">
-            <img src="images/img-9c496f188217.png" alt="Fizen Card" style="width:100%;height:auto;filter:drop-shadow(0 20px 60px rgba(0,0,0,0.3));">
-            
-        </div>
-        
-    </div>
-</section>
-
-<!-- USER REVIEWS -->
-    <section style="padding:80px 24px;background:#FAFAFA;">
-        <div style="max-width:1200px;margin:0 auto;text-align:center;">
-            
-            <h2 style="font-size:clamp(28px,4vw,40px);font-weight:700;margin-bottom:12px;">Что говорят наши пользователи</h2>
-            <p style="font-size:16px;color:#52525B;margin-bottom:48px;max-width:600px;margin-left:auto;margin-right:auto;">От Бали до Бангкока и Бельгии. Фрилансеры, путешественники и экспаты, которые выбрали Fizen.</p>
-            <div class="reviews-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:left;">
-
-                <div class="review-card" data-animate>
-                    <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
-                        <div>
-                            <div style="display:flex;align-items:center;gap:12px;"><div class="review-avatar" style="background:#500EC1;">CS</div><div style="font-weight:600;font-size:15px;">Christopher Silva 🇧🇪</div></div>
-                            <div style="font-size:13px;color:#52525B;">Специалист по Meta Ads, Бельгия</div>
-                        </div>
-                    </div>
-                    <div style="margin-bottom:8px;"><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span></div>
-                    <p style="font-size:14px;line-height:1.7;color:#374151;">"Авторизация карты в Meta 100%. Комиссии стабильные и предсказуемые. Поддержка всегда отвечала быстро и реально решала вопросы. Видно, что люди болеют за продукт. Очень надёжно."</p>
-                </div>
-                <div class="review-card" data-animate>
-                    <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
-                        <div>
-                            <div style="display:flex;align-items:center;gap:12px;"><div class="review-avatar" style="background:#500EC1;">AP</div><div style="font-weight:600;font-size:15px;">Alexey Petrash 🇷🇺</div></div>
-                            <div style="font-size:13px;color:#52525B;">Путешественник, Бали</div>
-                        </div>
-                    </div>
-                    <div style="margin-bottom:8px;"><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span></div>
-                    <p style="font-size:14px;line-height:1.7;color:#374151;">"Приложение отлично работает в поездках. Транзакции проходят гладко, комиссии фиксированные, никаких сюрпризов. Да, комиссия за выпуск $10, но окупается быстро: скрытых платежей нет. По сравнению с картой Bybit экономлю значительно больше на крупных суммах."</p>
-                </div>
-                <div class="review-card" data-animate>
-                    <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
-                        <div>
-                            <div style="display:flex;align-items:center;gap:12px;"><div class="review-avatar" style="background:#500EC1;">NC</div><div style="font-weight:600;font-size:15px;">Netanel Cohen 🇮🇱</div></div>
-                            <div style="font-size:13px;color:#52525B;">Экспат, Дананг, Вьетнам</div>
-                        </div>
-                    </div>
-                    <div style="margin-bottom:8px;"><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span></div>
-                    <p style="font-size:14px;line-height:1.7;color:#374151;">"Отличное решение для USDT в повседневной жизни. Использую для всего: eSIM, VietQR Pay, покупки. Вернули комиссию за газ, когда отправил в неправильную сеть. Обработали возвраты покупок. Особая благодарность Бену из Fizen, который всегда на связи."</p>
-                </div>
-                <div class="review-card" data-animate>
-                    <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
-                        <div>
-                            <div style="display:flex;align-items:center;gap:12px;"><div class="review-avatar" style="background:#500EC1;">HS</div><div style="font-weight:600;font-size:15px;">Hasani Sahlehe 🇹🇿</div></div>
-                            <div style="font-size:13px;color:#52525B;">Специалист по Google и TikTok Ads, Танзания</div>
-                        </div>
-                    </div>
-                    <div style="margin-bottom:8px;"><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span></div>
-                    <p style="font-size:14px;line-height:1.7;color:#374151;">"Авторизация без комиссии за привязку карты, работает стабильно. Можно создавать несколько карт, замораживать или закрывать в любое время. Панель управления можно улучшить, но опыт отличный благодаря прямому общению с командой."</p>
-                </div>
-                <div class="review-card" data-animate>
-                    <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
-                        <div>
-                            <div style="display:flex;align-items:center;gap:12px;"><div class="review-avatar" style="background:#500EC1;">PM</div><div style="font-weight:600;font-size:15px;">Park Minho 🇰🇷</div></div>
-                            <div style="font-size:13px;color:#52525B;">Экспат, Бангкок, Таиланд</div>
-                        </div>
-                    </div>
-                    <div style="margin-bottom:8px;"><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span></div>
-                    <p style="font-size:14px;line-height:1.7;color:#374151;">"Узнал о них на мероприятии в Сингапуре. Самая недооценённая команда в крипто. Работают тихо, но качественно. Пользуюсь картой с момента запуска, лучшая инвестиция $10 в моей жизни. Отправил отзыв, и прислали подарок. Здесь чувствуешь себя в безопасности."</p>
-                </div>
-                <div class="review-card" data-animate>
-                    <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
-                        <div>
-                            <div style="display:flex;align-items:center;gap:12px;"><div class="review-avatar" style="background:#500EC1;">LT</div><div style="font-weight:600;font-size:15px;">Li Tian Yuan 🇨🇳</div></div>
-                            <div style="font-size:13px;color:#52525B;">Путешественник по Юго-Восточной Азии</div>
-                        </div>
-                    </div>
-                    <div style="margin-bottom:8px;"><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span><span style="color:#FBBF24;">&#9733;</span></div>
-                    <p style="font-size:14px;line-height:1.7;color:#374151;">"Fizen это Alipay Юго-Восточной Азии. Нашёл через ChatGPT, и всё работает на 100%. QR Pay выручал не раз. Карту получил в подарок как лояльный пользователь. Команда поддержки: это не просто проект, это ваши друзья."</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-<section class="tether-section">
-    <div class="tether-content">
-        <div class="tether-image">
-            <img src="images/img-4ae428bf2dfa.jpg" alt="Tether and Fizen partnership">
-        </div>
-        <div class="tether-text">
-            <h2 style="font-size:clamp(28px,4vw,40px);font-weight:700;margin-bottom:20px;">Инвестиции от Tether</h2>
-            <p style="font-size:16px;line-height:1.7;color:#52525B;margin-bottom:16px;">Карта и вся экосистема Fizen поддерживается Tether, компанией стоящей за USDT. Они создали самый надежный стейблкоин, а их оборот более $100 млрд.</p>
-            <p style="font-size:16px;line-height:1.7;color:#52525B;margin-bottom:24px;">Это партнерство обеспечивает безопасность, стабильность и задает высокий уровень качества наших услуг.</p>
-            <a href="https://tether.io/news/tether-announces-strategic-investment-in-fizen-to-strengthen-global-stablecoin-utilization-and-self-custody-solutions/" target="_blank" style="color:#500EC1;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:8px;">Читать объявление <span>&rarr;</span></a>
-        </div>
-    </div>
-</section>
-
-
-
-<!-- EVENTS SECTION -->
-<section class="events-section" style="padding:60px 24px;max-width:1200px;margin:0 auto;">
-        <h2>Вместе с 2022 года</h2>
-        <div class="events-grid">
-            <a href="https://www.youtube.com/watch?v=64vLhcqBFnA" target="_blank" class="event-card">
-                <div class="event-image"><img src="images/img-ed77cb8afc31.jpg" alt="ETH HCMC 2022" style="width:100%;height:100%;object-fit:contain;border-radius:8px;"></div>
-                <div class="event-name">ETH HCMC 2022</div>
-            </a>
-            <a href="https://www.youtube.com/watch?v=6qU0sQaQNcY" target="_blank" class="event-card">
-                <div class="event-image"><img src="images/img-94d581c0a520.jpg" alt="Blockchain Summit 2022" style="width:100%;height:100%;object-fit:contain;border-radius:8px;"></div>
-                <div class="event-name">Blockchain Summit 2022</div>
-            </a>
-            <a href="https://www.youtube.com/watch?v=P7Du3TC4cTU" target="_blank" class="event-card">
-                <div class="event-image"><img src="images/img-7d5e7ac0d901.jpg" alt="Paris Blockchain Summit 2022" style="width:100%;height:100%;object-fit:contain;border-radius:8px;"></div>
-                <div class="event-name">Paris Blockchain Summit 2022</div>
-            </a>
-            <a href="https://x.com/fizenapp/status/1504062446885302273" target="_blank" class="event-card">
-                <div class="event-image"><img src="images/img-eaaf29d82c2a.jpg" alt="Crypto Expo 2022" style="width:100%;height:100%;object-fit:contain;border-radius:8px;"></div>
-                <div class="event-name">Crypto Expo 2022</div>
-            </a>
-            <a href="https://www.youtube.com/watch?v=mqT619xzHaY" target="_blank" class="event-card">
-                <div class="event-image"><img src="images/img-5b56a965e257.jpg" alt="WBS Marvels HCMC 2022" style="width:100%;height:100%;object-fit:contain;border-radius:8px;"></div>
-                <div class="event-name">WBS Marvels HCMC 2022</div>
-            </a>
-            <a href="https://www.youtube.com/watch?v=FN3p3hpljGg" target="_blank" class="event-card">
-                <div class="event-image"><img src="images/img-7f0e4cfd74e2.jpg" alt="Miss Charm 2023 (Official Sponsor)" style="width:100%;height:100%;object-fit:contain;border-radius:8px;"></div>
-                <div class="event-name">Miss Charm 2023 (Official Sponsor)</div>
-            </a>
-            <a href="https://www.youtube.com/watch?v=MIykPA2JZhQ" target="_blank" class="event-card">
-                <div class="event-image"><img src="images/img-c3349d96832d.jpg" alt="Miss Universe 2023 (Voting System)" style="width:100%;height:100%;object-fit:contain;border-radius:8px;"></div>
-                <div class="event-name">Miss Universe 2023 (Voting System)</div>
-            </a>
-            <a href="https://www.youtube.com/watch?v=QPvhAJ0AczI" target="_blank" class="event-card">
-                <div class="event-image"><img src="images/img-f4aa8bb85fd9.jpg" alt="NEAR APAC 2023" style="width:100%;height:100%;object-fit:contain;border-radius:8px;"></div>
-                <div class="event-name">NEAR APAC 2023</div>
-            </a>
-            <a href="https://www.youtube.com/watch?v=1EoGIDeJUes" target="_blank" class="event-card">
-                <div class="event-image"><img src="images/img-096f8183bce1.jpg" alt="TOKEN2049 Dubai 2024" style="width:100%;height:100%;object-fit:contain;border-radius:8px;"></div>
-                <div class="event-name">TOKEN2049 Dubai 2024</div>
-            </a>
-            <a href="https://www.youtube.com/watch?v=JvUjoBlmH0k" target="_blank" class="event-card">
-                <div class="event-image"><img src="images/img-572d28d8474a.jpg" alt="Global Blockchain Show Dubai 2024" style="width:100%;height:100%;object-fit:contain;border-radius:8px;"></div>
-                <div class="event-name">Global Blockchain Show Dubai 2024</div>
-            </a>
-            <a href="https://x.com/fizenapp/status/1836613793834791111" target="_blank" class="event-card">
-                <div class="event-image"><img src="images/img-a7c1fed35f90.jpg" alt="TOKEN2049 Singapore 2024" style="width:100%;height:100%;object-fit:contain;border-radius:8px;"></div>
-                <div class="event-name">TOKEN2049 Singapore 2024</div>
-            </a>
-            <a href="https://www.youtube.com/watch?v=K5L50TkUSgk" target="_blank" class="event-card">
-                <div class="event-image"><img src="images/img-2f8f96d0a812.jpg" alt="Tour de USDT by Fizen x Tether" style="width:100%;height:100%;object-fit:contain;border-radius:8px;"></div>
-                <div class="event-name">Tour de USDT by Fizen x Tether</div>
-            </a>
-        </div>
-    </section>
-
-<section class="faq-section">
-    <h2>Часто задаваемые вопросы</h2>
-    <div class="faq-item">
-        <div class="faq-header">
-            <h3 class="faq-title">Что такое карта Fizen?</h3>
-            <div class="faq-toggle">+</div>
-        </div>
-        <div class="faq-answer">
-            Карта Fizen это виртуальная карта Visa, которая позволяет тратить USDT напрямую. Конвертируйте USDT в USD 1:1 и платите в любой точке, принимающей Visa по всему миру. При поддержке Tether: безопасные, быстрые и глобально принятые платежи.
-        </div>
-    </div>
-
-    <div class="faq-item">
-        <div class="faq-header">
-            <h3 class="faq-title">Как работает выпуск карты без комиссии?</h3>
-            <div class="faq-toggle">+</div>
-        </div>
-        <div class="faq-answer">
-            В течение ограниченного времени Fizen отменяет комиссию за выпуск карты в размере $9.99. Создание и активация карты полностью бесплатны. Предложение доступно только по этой ссылке.
-        </div>
-    </div>
-
-    <div class="faq-item">
-        <div class="faq-header">
-            <h3 class="faq-title">Какие комиссии?</h3>
-            <div class="faq-toggle">+</div>
-        </div>
-        <div class="faq-answer">
-            Выпуск карты $0 (обычно $9.99). Первый месяц обслуживания бесплатно. Пополнение бесплатно (минус комиссия сети). Конвертация валют 1%, конвертация при пополнении 0.5%. Полные условия на сайте.
-        </div>
-    </div>
-
-    <div class="faq-item">
-        <div class="faq-header">
-            <h3 class="faq-title">Где можно использовать карту Fizen?</h3>
-            <div class="faq-toggle">+</div>
-        </div>
-        <div class="faq-answer">
-            Картой Fizen можно платить везде, где принимают Visa: более 150 млн торговых точек в 200+ странах. Также можно добавить в Apple Pay и Google Pay для бесконтактной оплаты.
-        </div>
-    </div>
-
-    <div class="faq-item">
-        <div class="faq-header">
-            <h3 class="faq-title">Безопасна ли карта Fizen?</h3>
-            <div class="faq-toggle">+</div>
-        </div>
-        <div class="faq-answer">
-            Да. Карта Fizen использует SSL-шифрование, верификацию 3D Secure и поддерживается Tether. Карта виртуальная и может быть заморожена мгновенно при необходимости. Fizen не хранит конфиденциальные данные на вашем устройстве.
-        </div>
-    </div>
-</section>
-
-<section class="final-cta">
-    <div class="final-cta-content">
-        <h2 style="font-size:clamp(28px,4vw,44px);font-weight:800;letter-spacing:-0.5px;">Оплачивайте покупки по всему миру, как в 2020м 😉</h2>
-        <a href="https://app.fizen.io?utm_source=landing&utm_medium=web&utm_campaign=apr-free-card-camp&utm_content=ru" class="btn-cta" style="display:inline-block;padding:16px 48px;font-size:17px;font-weight:700;background:#fff;color:#500EC1;border:none;border-radius:12px;text-decoration:none;margin-top:16px;transition:all 0.3s;box-shadow:0 4px 20px rgba(0,0,0,0.15);">Получить карту бесплатно</a>
-        <p style="font-size:14px;color:rgba(255,255,255,0.6);margin-top:12px;">Без скрытых комиссий</p>
-    </div>
-</section>
-
-    
-
-
-
-
-
-
-
-</main>
-<!-- FOOTER -->
-<footer>
-    <div class="footer-content">
-        <div class="footer-logo">
-            <img src="images/img-67770d4f13fd.png" alt="Fizen">
-        </div>
-        <div class="footer-links">
-            <a href="https://docs.fizen.io/card" target="_blank">Документация</a>
-            <a href="https://fizenio.gitbook.io/docs/information/privacy-policy" target="_blank">Политика конфиденциальности</a>
-            <a href="https://fizenio.gitbook.io/docs/information/terms-of-use" target="_blank">Условия использования</a>
-        </div>
-    </div>
-    <div class="footer-divider">
-        <div class="footer-bottom">
-            <p>© 2022-2026 Fizen. All rights reserved.</p>
-        </div>
-    </div>
-</footer>
-
-<script>
-    // Intersection Observer for scroll animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in-view');
-            }
-        });
-    }, observerOptions);
-
-    // Observe elements with fade-in-up animation
-    document.querySelectorAll('.why-card, .step, .faq-item, .event-card').forEach(el => {
-        observer.observe(el);
-    });
-
-    // FAQ Accordion
-    const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach(item => {
-        const header = item.querySelector('.faq-header');
-        header.addEventListener('click', () => {
-            // Close other items
-            faqItems.forEach(otherItem => {
-                if (otherItem !== item && otherItem.classList.contains('active')) {
-                    otherItem.classList.remove('active');
-                }
-            });
-            // Toggle current item
-            item.classList.toggle('active');
-        });
-    });
-
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-    });
-</script>
-
-
-<script>
-// Countdown timer - ends April 30, 2026
-(function() {
-    var end = new Date('2026-04-30T23:59:59').getTime();
-    function update() {
-        var now = new Date().getTime();
-        var diff = end - now;
-        if (diff <= 0) return;
-        var d = Math.floor(diff / 86400000);
-        var h = Math.floor((diff % 86400000) / 3600000);
-        var m = Math.floor((diff % 3600000) / 60000);
-        var s = Math.floor((diff % 60000) / 1000);
-        var de = document.getElementById('countdown-days');
-        if (de) de.textContent = d < 10 ? '0' + d : d;
-        var he = document.getElementById('countdown-hours');
-        if (he) he.textContent = h < 10 ? '0' + h : h;
-        var me = document.getElementById('countdown-minutes');
-        if (me) me.textContent = m < 10 ? '0' + m : m;
-        var se = document.getElementById('countdown-seconds');
-        if (se) se.textContent = s < 10 ? '0' + s : s;
-    }
-    update();
-    setInterval(update, 1000);
-})();
-</script>
-</body>
-</html>
+</html>П
